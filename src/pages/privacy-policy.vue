@@ -1,12 +1,12 @@
 <template>
-    <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary)">
+    <div style="padding-top: 66px;">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--brand-color)">
             <p class="fs-1">Privacy Policy</p>
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="card border-0">
+                    <div class="card border-0 text-start">
                         <div class="card-body"> 
 
                             <p>SalesWik respects your privacy and is committed to protecting the personal

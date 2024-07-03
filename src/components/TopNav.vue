@@ -12,16 +12,22 @@
                 </router-link>
             </div>
         </div>
-        <!-- <div class="">
-            <router-link v-if="showOnDemo && !showOnFree" to="/free-trial"
+        <div class="d-flex gap-3">
+            <div class="rounded-circle p-2 px-3 bg-success" @click="openWhatsapp()">
+                <i class="bi bi-whatsapp text-white fs-4"></i>
+            </div>
+            <div class="rounded-circle p-2 px-3 bg-primary" @click="openDialer()">
+                <i class="bi bi-telephone text-white fs-4"></i>
+            </div>
+            <!-- <router-link v-if="showOnDemo && !showOnFree" to="/free-trial"
                 class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
                 <span class="text-capitalize">Try free</span>
             </router-link>
             <router-link v-if="showOnFree && !showOnDemo" to="/demo"
                 class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
                 <span class="text-capitalize">Demo</span>
-            </router-link>
-        </div> -->
+            </router-link> -->
+        </div>
     </div>
 </template>
 
@@ -32,17 +38,7 @@ export default {
         return {
             brandLogo: '/img/logo.svg',
         }
-    },
-    // computed: {
-    //     showOnFree() {
-    //         const hiddenPages = ['free-trial']
-    //         return hiddenPages.includes(this.$route.name)
-    //     },
-    //     showOnDemo() {
-    //         const hiddenPages = ['demo-page']
-    //         return hiddenPages.includes(this.$route.name)
-    //     },
-    // },
+    }, 
     methods: {
         closeOffcanvas() {
             const offcanvasElement = document.getElementById('offcanvasExample');
@@ -50,6 +46,13 @@ export default {
             if (bsOffcanvas) {
                 bsOffcanvas.hide();
             }
+        },
+        openDialer() {
+            const phoneNumber = 918860012001;
+            window.location.href = `tel:${phoneNumber}`;
+        },
+        openWhatsapp() {
+            window.open(`https://wa.me/${918860012001}?text=Hello...`, '_blank');
         }
     },
     mounted() {

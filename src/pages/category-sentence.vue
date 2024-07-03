@@ -1,8 +1,8 @@
 <template>
-  <div> 
-    <div class="" style="padding-top: 70px; background-color:var(--bg-primary) ">
+  <div>
+    <div class="" style="padding-top: 70px; background-color:var(--bg-forth) ">
       <div class="container mb-3 py-5">
-        <label for="categorySelect" class="form-label text-white fs-4">Filter by Customers</label>
+        <label for="categorySelect" class="form-label text-dark fs-4">Filter by Customers</label>
         <select v-model="selectedCategory" class="form-select" id="categorySelect">
           <option value="">All Customers</option>
           <option v-for="category in customerList" :key="category" :value="category.name">{{ category.name }}</option>
@@ -30,14 +30,12 @@
 export default {
   data() {
     return {
-      servicesList: [
-        "Lead Tracking Software", " CRM Software", " Sales Automation Software", " Marketing Automation Software", "Lead Generation Software", "Sales Enablement Software", "Customer Engagement Software",
-      ],
+      servicesList: ["Digital Marketing", " Website Development", "Software Development",],
       customerList: [
-        { name: "agents", color: "#c6def1", },
-        { name: "sales person", color: "#f2c6de", },
-        { name: "marketing manager", color: "#f7d9c4", },
-        { name: "digital marketer", color: "#dbcdf0", },
+        { name: "businessman", color: "#c6def1", },
+        { name: "manufacturer", color: "#f2c6de", },
+        { name: "Service provider", color: "#f7d9c4", },
+        { name: "trader", color: "#dbcdf0", },
       ],
       placesList: [
         'Delhi NCR', 'India'

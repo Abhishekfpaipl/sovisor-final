@@ -1,15 +1,73 @@
 <template>
     <div>
-        <FormBanner :service="'Software Development'" :category="category" :place="place" v-observe />
-
-        <LeadManagement :values="features" :title="'Factors, you will love'" v-observe />
-
-        <AutoScrolling v-observe />
-        <TempCustomers :reviews="customers" title="our customers" v-observe />
-        <Faq :questions="questions" v-observe />
-        <Counter :service="'Software Development'" :serviceCount="2000" :category="'India'" :categoryCount="1500"
-            :place="'All over the world'" :placeCount="5000" v-observe />
-        <WhyChooseUs v-observe />
+        <div class="my-5">
+            <FormBanner :service="'Software Development'" :category="category" :place="place" text="we are offering"
+                v-observe />
+        </div>
+        <div class="my-5">
+            <LeadManagement :values="features" title="What makes us different ?" v-observe />
+        </div>
+        <div class="my-5">
+            <div class="container">
+                <h1 class="text-center py-4">Software Development Pricing</h1>
+                <div class="table-responsive pb-4">
+                    <table class="table table-bordered table-light table-striped" style="width: 100%;">
+                        <thead class="border-bottom">
+                            <tr>
+                                <th class="text-start">Features <p class="mb-0 small">List</p>
+                                </th>
+                                <th scope="col" class="border-end text-center" v-for="plan in plans" :key="plan.id">
+                                    <p class="mb-0">{{ plan.title }}</p>
+                                    <p class="mb-0 ">
+                                        <small class="smaller ">₹</small>
+                                        <small class="smaller">{{ plan.price }}</small>
+                                        <small class="smaller fw-normal">/-</small>
+                                    </p>
+                                    <p class="mb-0">
+                                        <small class="fw-light text-decoration-line-through text-dark smaller">{{
+                                            plan.mrp
+                                        }}</small>
+                                    </p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="border-start border-end">
+                            <tr class="border-bottom" v-for="(feature, index) in plans[0].features" :key="feature.id">
+                                <th class="pb-1 text-start">
+                                    <span class="fw-normal smaller">{{ feature.name }}</span>
+                                </th>
+                                <td class="pb-1 text-center" v-for="plan in plans" :key="plan.id">
+                                    <i v-if="plan.features[index].included"
+                                        class="bi bi-check2 fs-5 text-success smaller"></i>
+                                    <i v-else-if="feature.name === 'Brand Logo' && plan.id === 4"
+                                        class="fw-normal">Basic</i>
+                                    <i v-else class="bi bi-dash fs-5 text-secondary"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="my-5">
+            <SalesFunnel :values="values" v-observe />
+        </div>
+        <div class="my-5">
+            <AutoScrolling v-observe />
+        </div>
+        <div class="my-5">
+            <TempCustomers :reviews="customers" title="our customers" v-observe />
+        </div>
+        <div class="my-5">
+            <Faq :questions="questions" v-observe />
+        </div>
+        <div class="my-5">
+            <Counter :service="'Software Development'" :serviceCount="2000" :category="'India'" :categoryCount="1500"
+                :place="'All over the world'" :placeCount="5000" image="/img/smile.svg" title="our happy customers" v-observe />
+        </div>
+        <div class="my-5">
+            <WhyChooseUs v-observe />
+        </div>
 
     </div>
 </template>
@@ -20,8 +78,10 @@ import WhyChooseUs from '@/components/WhyChooseUs.vue'
 import TempCustomers from "@/components/TempCustomers.vue";
 import Faq from '@/components/FaqSection.vue';
 import FormBanner from '@/components/FormBanner.vue';
-import Counter from '@/components/services/SalesCounter.vue';
+import Counter from '@/components/CustomCounter.vue';
 import AutoScrolling from '@/components/services/AutoScrolling.vue';
+import SalesFunnel from "@/components/SalesFunnel.vue";
+
 export default {
     name: "SoftwareDevelopment",
     components: {
@@ -32,6 +92,7 @@ export default {
         Faq,
         Counter,
         AutoScrolling,
+        SalesFunnel,
     },
     data() {
         return {
@@ -40,53 +101,65 @@ export default {
             place: '',
             features: [
                 {
-                    id: 1,
-                    icon: 'bi-boxes fs-4',
-                    title: "Stock Management System",
-                    description: "Track inventory levels and manage stock efficiently.",
+                    icon: 'bi-shield-check',
+                    title: "Integrity properties",
+                    description: "Demonstrating transparency and honesty in all our commitments and actions, ensuring trust and reliability in every interaction.",
                 },
                 {
-                    id: 2,
-                    icon: 'bi-currency-dollar fs-4',
-                    title: "Financial Management System",
-                    description: "Handle financial transactions and budgeting seamlessly.",
+                    icon: 'bi-star',
+                    title: "Excellence",
+                    description: "Going beyond expectations by understanding your needs deeply and meticulously crafting solutions that surpass ordinary standards.",
                 },
                 {
-                    id: 3,
-                    icon: 'bi-credit-card fs-4',
-                    title: "Payment Management System",
-                    description: "Streamline payment processing and transactions.",
+                    icon: 'bi-people',
+                    title: "Teamwork",
+                    description: "Leveraging collective strengths to provide you with adaptable and superior solutions, fostering a collaborative environment where every voice contributes meaningfully."
                 },
                 {
-                    id: 4,
-                    icon: 'bi-briefcase fs-4',
-                    title: "Asset Management System",
-                    description: "Manage and track company assets effectively.",
+                    icon: 'bi-shield-lock',
+                    title: "Privacy and safety",
+                    description: "Create powerful digital safety solutions for your workforce,increasing employee engagement with important processes and procedures effiiciently whilst ensuring the highest levels of compliance.",
                 },
                 {
-                    id: 5,
-                    icon: 'bi-people fs-4',
-                    title: "Human Resources Management System",
-                    description: "Automate HR processes and manage employee data.",
+                    icon: 'bi-graph-up',
+                    title: "Quality services",
+                    description: "Crafting bespoke web designs that drive impactful user experiences and convey a distinct brand message, led by experienced designers from concept to execution.",
                 },
                 {
-                    id: 65,
-                    icon: 'bi-file-earmark-text fs-4',
-                    title: "Document Management System",
-                    description: "Organize and store documents securely.",
+                    icon: 'bi-palette',
+                    title: "Creativity",
+                    description: "Solving challenges innovatively, refusing to settle for ordinary solutions, and creating bespoke strategies that not only solve problems but also distinguish your business.",
                 },
                 {
-                    id: 63,
-                    icon: 'bi-kanban fs-4',
-                    title: "Project Management System",
-                    description: "Plan, track, and manage projects efficiently.",
+                    icon: 'bi-calendar-check ',
+                    title: "Dependability",
+                    description: "Consistently delivering on promises, meeting deadlines with proactive communication, and treating your business's success as our own commitment.",
                 },
                 {
-                    id: 54,
-                    icon: 'bi-graph-up-arrow fs-4',
-                    title: "Lead Management System",
-                    description: "Track and manage leads through the sales process.",
+                    icon: 'bi-emoji-laughing',
+                    title: "Fun",
+                    description: "Cultivating a positive and enjoyable workplace environment, fostering creativity, exceptional client service, and the well-being of our team members through humor and camaraderie.",
                 },
+                {
+                    icon: 'bi-hand-thumbs-up ',
+                    title: "Helping Hand",
+                    description: "Fostering a supportive and positive workplace environment."
+                },
+                {
+                    icon: 'bi-gem',
+                    title: "World Class Quality",
+                    description: "Delivering exceptional quality in all our services."
+                },
+                {
+                    icon: 'bi-tags',
+                    title: "Competitive Pricing",
+                    description: "Offering the best prices without compromising on quality."
+                },
+                {
+                    icon: 'bi-lightning ',
+                    title: "Incredibly Fast Delivery",
+                    description: "Ensuring quick and efficient delivery for our clients."
+                }
             ],
             questions: [
                 {
@@ -247,7 +320,121 @@ export default {
                     rating: '5',
                     text: "Saleswik has helped us to decentralize information. Now all the team has access to the documents and sales information. We no longer have the problem that some documents is stored on the PC of a teammate who is not accessible at the time."
                 },
-            ]
+            ],
+            values: [
+                {
+                    id: 1,
+                    icon: 'bi-funnel fs-4',
+                    title: "Business & Competitors Analysis",
+                    color: '#e76365',
+                    description: "Buy targeted advertising on Facebook and Instagram or Google and start driving high- quality traffic to your Saleswik landing pages.",
+                },
+                {
+                    id: 2,
+                    icon: 'bi-diagram-3 fs-4',
+                    title: "Development of Strategies ",
+                    color: "#f5925e",
+                    description: "Select a high-converting Saleswik landing page which is more optimized for your business goals. ",
+                },
+                {
+                    id: 3,
+                    icon: 'bi-hand-thumbs-up fs-4',
+                    title: "Validation of Required Digital Places ",
+                    color: "#f8a42a",
+                    description: "Get more conversions by capturing the contact details of the visitors, visiting your Saleswik landing page.",
+                },
+                {
+                    id: 4,
+                    icon: 'bi-megaphone fs-4',
+                    title: "Optimization of Digital Presence",
+                    color: "#f8d452",
+                    description: "Set up campaigns to nurture your leads and build relationships and turn your expertise into a commodity",
+                },
+                {
+                    id: 5,
+                    icon: 'bi-telephone fs-4',
+                    title: "Run Content Creation Program",
+                    color: "#fbd453",
+                    description: "From your sales page and order form templates in seconds to sell your products and services online.",
+                },
+                {
+                    id: 6,
+                    icon: 'bi-whatsapp fs-4',
+                    title: "Run Reputation Management Program",
+                    color: "#c9d825",
+                    description: "Increase your revenue and promote limited-time offers immediately after a customer's purchase.",
+                },
+                {
+                    id: 7,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Provide Lead Management System",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+                {
+                    id: 8,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Successfully Achievement of Goals",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+            ],
+            plans: [
+                {
+                    id: 1,
+                    title: "Lite",
+                    description: "Info Website",
+                    price: '999',
+                    mrp: '2,000',
+                    features: [
+                        { id: 1, name: "Stock Management System", included: true },
+                        { id: 2, name: "Financial Management System", included: true },
+                        { id: 3, name: "Payment Management System", included: true },
+                        { id: 4, name: "Asset Management System", included: true },
+                        { id: 5, name: "Human Resources Management System", included: true },
+                        { id: 6, name: "Document Management System", included: true },
+                        { id: 7, name: "Project Management System", included: false },
+                        { id: 8, name: "Lead Management System", included: false },
+
+                    ],
+                },
+                {
+                    id: 2,
+                    title: "Plus",
+                    description: "Business Website",
+                    price: '1,499',
+                    mrp: '3,000',
+                    features: [
+                        { id: 1, name: "Stock Management System", included: true },
+                        { id: 2, name: "Financial Management System", included: true },
+                        { id: 3, name: "Payment Management System", included: true },
+                        { id: 4, name: "Asset Management System", included: true },
+                        { id: 5, name: "Human Resources Management System", included: true },
+                        { id: 6, name: "Document Management System", included: true },
+                        { id: 7, name: "Project Management System", included: true },
+                        { id: 8, name: "Lead Management System", included: true },
+
+                    ],
+                },
+                {
+                    id: 3,
+                    title: "Elite",
+                    description: "Catalog Website",
+                    price: '2,499',
+                    mrp: '5,000',
+                    features: [
+                        { id: 1, name: "Stock Management System", included: true },
+                        { id: 2, name: "Financial Management System", included: true },
+                        { id: 3, name: "Payment Management System", included: true },
+                        { id: 4, name: "Asset Management System", included: true },
+                        { id: 5, name: "Human Resources Management System", included: true },
+                        { id: 6, name: "Document Management System", included: true },
+                        { id: 7, name: "Project Management System", included: true },
+                        { id: 8, name: "Lead Management System", included: true },
+
+                    ],
+                },
+            ],
         }
     },
     created() {

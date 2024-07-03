@@ -8,7 +8,7 @@
       <WelcomeModal />
     </div>
     <div class="my-5">
-      <LeadManagement :values="leads" title="Our Core Values" v-observe />
+      <LeadManagement :values="leads" title="What makes us differnet ?" v-observe />
     </div>
     <div class="my-5">
       <FreeConsultation v-observe />
@@ -16,25 +16,25 @@
     <div class="my-5" id="second">
       <PriceSection v-observe />
     </div>
-    <div class="my-5">
+    <div class="">
       <AutoScrolling v-observe />
     </div>
 
-    <div class="my-5">
+    <div class="">
       <WhyChooseUs v-observe />
     </div>
-    <div class="my-5">
+    <div class="">
       <ImageSection banner="/img/banner1.png" v-observe />
     </div>
-    <div class="my-5">
+    <!-- <div class="my-5">
       <SalesFunnel v-observe />
-    </div>
-    <div class="my-5">
-      <CustomCounter brandColorOne="#125252" brandTextColor="#78E6B7" name1="customers" :value1="50" name2="years"
-        :value2="10" name3="team" :value3="150" v-observe />
-    </div>
+    </div> -->
+    <!-- <div class="my-5">
+      <CustomCounter service="customers" :serviceCount="50" category="years" :categoryCount="10" place="team"
+        :placeCount="150" title="our facts" v-observe />
+    </div> -->
 
-    <div class="my-5">
+    <div class="">
       <TempFaqs :faqs="faqs" image-src="/img/faq.svg" title="Frequently asked questions" image-position="left"
         v-observe />
     </div>
@@ -44,7 +44,7 @@
     <div class="">
       <BookDemo :faqs="faqs" image-src="/img/demo.svg" title="let's book your free appointment" v-observe />
     </div>
-    <BottomShareIcons />
+    <!-- <BottomShareIcons /> -->
   </div>
 </template>
 
@@ -58,12 +58,12 @@ import AutoScrolling from "@/components/services/AutoScrolling.vue";
 import BookDemo from "@/components/BookDemo.vue";
 import PriceSection from "@/components/PriceSection.vue";
 import ImageSection from "@/components/ImageSection.vue";
-import SalesFunnel from "@/components/SalesFunnel.vue";
-import CustomCounter from "@/components/CustomCounter.vue";
+// import SalesFunnel from "@/components/SalesFunnel.vue";
+// import CustomCounter from "@/components/CustomCounter.vue";
 import WhyChooseUs from "@/components/WhyChooseUs.vue";
 import TempFaqs from "@/components/TempFaqs.vue";
 import TempCustomers from "@/components/TempCustomers.vue";
-import BottomShareIcons from "@/components/BottomShareIcons.vue";
+// import BottomShareIcons from "@/components/BottomShareIcons.vue";
 export default {
   components: {
     Banner,
@@ -75,12 +75,12 @@ export default {
     BookDemo,
     PriceSection,
     ImageSection,
-    SalesFunnel,
-    CustomCounter,
+    // SalesFunnel,
+    // CustomCounter,
     WhyChooseUs,
     TempFaqs,
     TempCustomers,
-    BottomShareIcons,
+    // BottomShareIcons,
   },
   data() {
     return {
@@ -169,53 +169,65 @@ export default {
       ],
       leads: [
         {
-          id: 1,
-          icon: 'bi-shield-check fs-4',
+          icon: 'bi-shield-check',
           title: "Integrity properties",
           description: "Demonstrating transparency and honesty in all our commitments and actions, ensuring trust and reliability in every interaction.",
         },
         {
-          id: 2,
-          icon: 'bi-star fs-4',
+          icon: 'bi-star',
           title: "Excellence",
           description: "Going beyond expectations by understanding your needs deeply and meticulously crafting solutions that surpass ordinary standards.",
         },
         {
-          id: 3,
-          icon: 'bi-people fs-4',
+          icon: 'bi-people',
           title: "Teamwork",
           description: "Leveraging collective strengths to provide you with adaptable and superior solutions, fostering a collaborative environment where every voice contributes meaningfully."
         },
         {
-          id: 4,
-          icon: 'bi-shield-lock fs-4',
+          icon: 'bi-shield-lock',
           title: "Privacy and safety",
           description: "Create powerful digital safety solutions for your workforce,increasing employee engagement with important processes and procedures effiiciently whilst ensuring the highest levels of compliance.",
         },
         {
-          id: 5,
-          icon: 'bi-graph-up fs-4',
+          icon: 'bi-graph-up',
           title: "Quality services",
           description: "Crafting bespoke web designs that drive impactful user experiences and convey a distinct brand message, led by experienced designers from concept to execution.",
         },
         {
-          id: 6,
-          icon: 'bi-palette fs-4',
+          icon: 'bi-palette',
           title: "Creativity",
           description: "Solving challenges innovatively, refusing to settle for ordinary solutions, and creating bespoke strategies that not only solve problems but also distinguish your business.",
         },
         {
-          id: 7,
-          icon: 'bi-calendar-check fs-4',
+          icon: 'bi-calendar-check ',
           title: "Dependability",
           description: "Consistently delivering on promises, meeting deadlines with proactive communication, and treating your business's success as our own commitment.",
         },
         {
-          id: 1,
-          icon: 'bi-emoji-laughing fs-4',
+          icon: 'bi-emoji-laughing',
           title: "Fun",
           description: "Cultivating a positive and enjoyable workplace environment, fostering creativity, exceptional client service, and the well-being of our team members through humor and camaraderie.",
         },
+        {
+          icon: 'bi-hand-thumbs-up ',
+          title: "Helping Hand",
+          description: "Fostering a supportive and positive workplace environment."
+        },
+        {
+          icon: 'bi-gem',
+          title: "World Class Quality",
+          description: "Delivering exceptional quality in all our services."
+        },
+        {
+          icon: 'bi-tags',
+          title: "Competitive Pricing",
+          description: "Offering the best prices without compromising on quality."
+        },
+        {
+          icon: 'bi-lightning ',
+          title: "Incredibly Fast Delivery",
+          description: "Ensuring quick and efficient delivery for our clients."
+        }
       ],
       customers: [
         {

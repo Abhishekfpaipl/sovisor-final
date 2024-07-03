@@ -1,6 +1,6 @@
 <template>
-    <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary);">
+    <div style="padding-top: 66px;">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--brand-color);">
             <p class="fs-1 mb-0 text-capitalize">Patnership with us</p>
             <p class="fs-5 text-capitalize">it's your own business , let it shine</p>
         </div>
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid text-white py-5" style="background-color: var(--bg-primary);">
+        <div class="container-fluid text-white py-5" style="background-color: var(--brand-color);">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <img src="/img/reseller-program.svg" style="width: 250px;max-width: 80%;" alt="">

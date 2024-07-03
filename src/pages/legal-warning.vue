@@ -1,6 +1,6 @@
 <template>
-    <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary)">
+    <div style="padding-top: 66px;">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--brand-color)">
             <p class="fs-1">Legal Warning</p>
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">

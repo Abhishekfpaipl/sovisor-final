@@ -1,29 +1,10 @@
 <template>
-    <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary);">
+    <div style="padding-top: 66px;">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--brand-color);">
             <h1 class="text-center mb-4">Frequently Asked Questions</h1>
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
-            <!-- <div class="row row-cols-1 row-cols-md-2 align-items-center">
-                <div class="col" v-for="(faq, index) in faqs" :key="index">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item my-2 border-0">
-                            <h2 class="accordion-header border">
-                                <button class="accordion-button collapsed bg-light" type="button"
-                                    data-bs-toggle="collapse" :data-bs-target="'#flush-collapseOne' + index"
-                                    aria-expanded="false" :aria-controls="'flush-collapseOne' + index">
-                                    <span class="me-2">Q{{ index + 1 }}.</span> {{ faq.question }}
-                                </button>
-                            </h2>
-                            <div :id="'flush-collapseOne' + index" class="accordion-collapse collapse border-0"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body text-start">{{ faq.answer }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <FaqSection/> 
+            <FaqSection />
         </div>
     </div>
 </template>
@@ -38,7 +19,7 @@ export default {
         return {
             faqs: [
                 {
-                    question: "What does a CRM system do ?",
+                    question: "What does a CRM system do?",
                     answer: "At its core, the CRM system is designed to manage communications with customers and align all stakeholders involved in interactions with them. However, CRM systems have evolved to perform complex tasks like automating processes, setting up workflows, tracking all conversations and using all the sales and marketing data to derive meaningful reports."
                 },
                 {

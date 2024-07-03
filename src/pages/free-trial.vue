@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-6 py-3 text-center px-4 px-md-2">
                     <h1 class="lh-1 text-capitalize">book your free consultation</h1>
                     <p class="text-capitalize">and learn how to grow your business digitally</p>
-                    <form @submit.prevent="submitQuery()" class="mt-4 row g-3 needs-validation" novalidate>
+                    <form @submit.prevent="submitForm()" class="mt-4 row g-3 needs-validation" novalidate>
                         <div class="w-100 form-floating mt-0">
                             <input type="text" class="form-control" placeholder="" v-model="name" required>
                             <label for="floatingInput" class="text-muted ms-2">Name</label>
@@ -33,16 +33,14 @@
                         <div class="form-check text-start ms-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                 v-model="agree">
-                            <label class="form-check-label small" for="flexCheckDefault">
-                                I agree to the <router-link to="/agreement" class="text-dark text-capitalize">terms and
-                                    conditions</router-link> and
-                                <router-link to="/privacy-policy" class="text-dark text-capitalize">privacy
-                                    policy.</router-link>
+                            <label class="form-check-label text-dark small" for="flexCheckDefault">
+                                I agree to share my contact details
                             </label>
                         </div>
                         <div class="col-12">
                             <button class="btn btn-warning py-2 fs-5 w-100 rounded-0 text-dark text-capitalize"
-                                type="submit">get my consultation</button>
+                                type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">get my
+                                consultation</button>
                         </div>
                     </form>
 
@@ -50,8 +48,8 @@
                 <div class="col-12 col-md-6 p-3">
                     <img src="/img/free-trial.svg" class="" style="width:250px; object-fit: contain;" alt="">
                     <p class="text-center mt-4 text-capitalize">in this 30 minutes free consultation you will get </p>
-                    <div class="d-flex gap-2 justify-content-start justify-content-md-center align-items-center" v-for="(link, index) in links"
-                        :key="index">
+                    <div class="d-flex gap-2 justify-content-start justify-content-md-center align-items-center"
+                        v-for="(link, index) in links" :key="index">
                         <i class="bi bi-check text-success fs-4"></i>
                         <p class="my-1 text-start">{{ link }}</p>
                     </div>
@@ -61,6 +59,24 @@
         <p class="text-center py-4 text-white mb-0 position-fixed bottom-0 w-100"
             style="background-color: var(--brand-color);">Questions? Talk to an
             expert: 8860012001</p>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="https://img.freepik.com/free-vector/thank-you-card-concept-illustration_114360-18055.jpg?t=st=1719996583~exp=1720000183~hmac=e47b2b4781b13e7bde9f0db72efffcc698011c1231992e96a1a7ef91205a0c91&w=740"
+                            alt="" style="width: 250px;">
+                        <p class="my-2 fw-bold">We got your details We'll get to you soon</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- image url -->
+        <!-- https://www.freepik.com/free-vector/thank-you-card-concept-illustration_44955445.htm#fromView=search&page=1&position=36&uuid=3a324ee3-8e9c-4e4a-9fed-3b9443d57291 -->
     </div>
 </template>
 <script>
@@ -303,10 +319,17 @@ export default {
                 { value: "ZM", label: "Zambia" },
                 { value: "ZW", label: "Zimbabwe" }
             ],
-            selectedJob: '',
             selectedCountry: 'IN',
-            selectedEmployee: '',
             agree: false,
+        }
+    },
+    methods: {
+        submitForm() {
+            if (this.agree) {
+                console.log('Form submitted successfully!');
+            } else {
+                alert('Please agree to the terms and conditions');
+            }
         }
     }
 }

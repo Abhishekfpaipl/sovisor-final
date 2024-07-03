@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="my-5">
-            <ServicesFormBanner />
+            <FormBanner />
         </div>
         <div class="">
             <BusinessCard />
@@ -9,12 +9,12 @@
     </div>
 </template>
 <script>
-import ServicesFormBanner from "@/components/services/FormBanner.vue";
+import FormBanner from '@/components/FormBanner.vue';
 import BusinessCard from "@/components/BusinessCard.vue";
 export default {
-    name:"BusinessPage",
-    components:{
-        ServicesFormBanner,
+    name: "BusinessPage",
+    components: {
+        FormBanner,
         BusinessCard,
     }
 }

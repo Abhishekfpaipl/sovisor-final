@@ -1,7 +1,7 @@
 <template>
     <div class="container my-5">
         <h1 class="my-4 text-center text-capitalize">We are offering softwares</h1>
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-2">
             <div class="col" v-for="(service, index) in services" :key="index">
                 <router-link :to="'/service-sentence/' + service.name" class="card text-decoration-none">
                     <div class="d-flex justify-content-center align-items-center py-2">
@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center text-capitalize">{{ service.name }}</h5>
                         <p class="card-text text-center text-ellipsis">{{ service.description }}</p>
-                        <a href="#" class="btn w-100 text-white" style="background-color: var(--bg-primary)">More</a>
+                        <a href="#" class="btn w-100 text-white" style="background-color: var(--brand-color)">More</a>
                     </div>
                 </router-link>
             </div>
@@ -51,7 +51,7 @@
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
             <div class="col" v-for="(place, index) in places" :key="index">
                 <router-link :to="'/place-sentence/' + place.name" class="card text-decoration-none">
-                    <p class="text-center card-header text-capitalize border-0">{{ place.name}}</p>
+                    <p class="text-center card-header text-capitalize border-0">{{ place.name }}</p>
                 </router-link>
             </div>
         </div>
@@ -64,20 +64,15 @@ export default {
     data() {
         return {
             services: [
-                { id: 1, name: "Lead Tracking", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
-                { id: 2, name: "CRM", image: '/img/template1.png', description: "Manage customer relationships, track interactions, and streamline sales processes." },
-                { id: 3, name: "Lead Generation", image: '/img/template1.png', description: "Generate and capture leads through various online and offline channels." },
-                { id: 4, name: "Sales Enablement", image: '/img/template1.png', description: "Provide sales teams with tools and content to effectively engage with prospects and close deals." },
-                { id: 5, name: "Sales Automation", image: '/img/template1.png', description: "Automate repetitive tasks and streamline sales workflows to increase efficiency." },
-                { id: 6, name: "Marketing Automation", image: '/img/template1.png', description: "Automate marketing processes such as email campaigns, social media, and lead nurturing." },
-                { id: 7, name: "Customer Engagement", image: '/img/template1.png', description: "Enhance customer interactions and satisfaction through personalized engagement strategies." },
-                { id: 8, name: "Pipeline Management", image: '/img/template1.png', description: "Efficiently manage and optimize your sales pipeline with our comprehensive pipeline management software." },
+                { id: 1, name: "Digital Marketing", image: '/img/template1.png', description: "Track and manage leads throughout the sales pipeline efficiently." },
+                { id: 2, name: "Website Development", image: '/img/template1.png', description: "Manage customer relationships, track interactions, and streamline sales processes." },
+                { id: 3, name: "Software Development", image: '/img/template1.png', description: "Generate and capture leads through various online and offline channels." },
             ],
             customers: [
-                { id: 1, name: "agents", color: "#c6def1" },
-                { id: 2, name: "sales person", color: "#f2c6de" },
-                { id: 3, name: "marketing manager", color: "#f7d9c4" },
-                { id: 4, name: "digital marketer", color: "#dbcdf0" },
+                { id: 1, name: "businessman", color: "#c6def1" },
+                { id: 2, name: "manufacturer", color: "#f2c6de" },
+                { id: 3, name: "Service provider", color: "#f7d9c4" },
+                { id: 4, name: "trader", color: "#dbcdf0" },
             ],
             categories: [
                 { id: 1, img: '/img/categories/Assembly.svg', name: "Assembly" },

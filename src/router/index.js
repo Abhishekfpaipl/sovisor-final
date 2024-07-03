@@ -92,7 +92,7 @@ const routes = [
     component: () => import("@/pages/service-page.vue")
   },
   {
-    path: "/term-of-use",
+    path: "/terms-of-use",
     name: "term-of-use",
     component: () => import("@/pages/term-of-use.vue")
   },

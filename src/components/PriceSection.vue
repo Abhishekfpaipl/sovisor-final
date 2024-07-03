@@ -66,12 +66,29 @@
                                 </div>
                                 <div class="card-footer bg-light p-0 border-top pt-2">
                                     <p class="card-text text-capitalize">{{ plan.description }}</p>
-                                    <div class="btn-group d-flex justify-content-center my-3">
+
+                                    <div class="btn-group w-100 my-2">
+                                        <router-link :to="plan.link + plan.price"
+                                            class="btn border btn-light text-capitalize px-4">
+                                            Know More
+                                        </router-link>
+                                        <a :href="'https://wa.me/8860012001?text=' + encodeURIComponent('Hello, I want to get your ' + price.name + ' service')"
+                                            class="btn text-capitalize px-4 text-white btn-success">
+                                            <i class="bi bi-whatsapp"></i>
+                                            <span class="ms-2">Enquiry</span>
+                                        </a>
+                                    </div>
+                                    <!-- <div class="btn-group d-flex justify-content-center my-3">
                                         <router-link :to="plan.link + plan.price"
                                             class="btn btn-light w-100 border">Know more</router-link>
+                                        <a :href="'https://wa.me/8860012001?text=' + encodeURIComponent('Hello, I want to get your ' + plan.title + ' service')"
+                                            class="btn text-capitalize px-4 text-white btn-success">
+                                            <i class="bi bi-whatsapp"></i>
+                                            <span class="ms-2">Enquiry</span>
+                                        </a>
                                         <button class="btn btn-warning w-100"><i class="bi bi-whatsapp me-2"></i>
                                             Enquiry</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -95,36 +112,68 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Starter",
+                            name: "Lite",
                             price: "500",
                             mrp: "5,000",
                             link: "/digital-marketing/",
                             tag: "/user/yearly/billed yearly",
-                            description: "Start with our starter plan and upgrade only when you need additional features.",
+                            description: "Start with our Lite plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
                                 {
-                                    text: "single Pipelines",
-                                    tooltip: "get a quick summary fo your customer-facing process and manage opportunities across different stages."
+                                    text: "Search Engine Optimization (SEO)",
+                                    tooltip: "Improve rankings with on-page and off-page SEO techniques."
                                 },
                                 {
-                                    text: "500 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities and notes are called records in saleswik."
+                                    text: "Pay-Per-Click Advertising (PPC)",
+                                    tooltip: "Manage paid ads on search engines and social media for targeted visibility."
                                 },
                                 {
-                                    text: "Automations (3)",
-                                    tooltip: "Automate repetitive actions by setting up triggers and specifying the conditions to be met for the execution of the actions."
+                                    text: "Content Marketing",
+                                    tooltip: "Create and distribute engaging content to attract and retain audiences."
                                 },
                                 {
-                                    text: "telephony",
-                                    tooltip: "Make and receive phone calls, record them , set up automated voice responses, and use call routing--dicrectly in saleswik."
+                                    text: "Social Media Marketing (SMM)",
+                                    tooltip: "Manage social media content and run targeted ad campaigns."
+                                },
+                                {
+                                    text: "Email Marketing",
+                                    tooltip: "Design and execute personalized email campaigns for better engagement."
+                                },
+                                {
+                                    text: "Influencer Marketing",
+                                    tooltip: "Partner with influencers to endorse products and reach new audiences."
+                                },
+                                {
+                                    text: "Conversion Rate Optimization (CRO)",
+                                    tooltip: "Optimize websites to increase conversion rates through data analysis."
+                                },
+                                {
+                                    text: "Analytics and Reporting",
+                                    tooltip: "Monitor and analyze marketing metrics to inform strategic decisions."
+                                },
+                                {
+                                    text: "Online Reputation Management (ORM)",
+                                    tooltip: "Manage online reviews and feedback to maintain a positive brand image."
+                                },
+                                {
+                                    text: "Mobile Marketing",
+                                    tooltip: "Optimize marketing strategies for mobile users and mobile-specific behaviors."
+                                },
+                                {
+                                    text: "Customer Relationship Management (CRM)",
+                                    tooltip: "Use CRM systems to manage leads and personalize marketing efforts."
+                                },
+                                {
+                                    text: "Marketing Automation",
+                                    tooltip: "Automate marketing tasks with tools like HubSpot, Marketo, or Mailchimp."
                                 },
                             ]
                         },
                         {
                             id: 2,
-                            name: "Enterprise",
+                            name: "Plus",
                             price: "1000",
                             mrp: "10,000",
                             link: "/digital-marketing/",
@@ -135,26 +184,58 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines (3)",
-                                    tooltip: "Create distinct pipelines for every team and unify all your customer-facing operations."
+                                    text: "Search Engine Optimization (SEO)",
+                                    tooltip: "Improve rankings with on-page and off-page SEO techniques."
                                 },
                                 {
-                                    text: "500000 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities adn notes are called records in saleswik. You can purchase additional records if you need to store more than 50000 records."
+                                    text: "Pay-Per-Click Advertising (PPC)",
+                                    tooltip: "Manage paid ads on search engines and social media for targeted visibility."
                                 },
                                 {
-                                    text: "Automations (30)",
-                                    tooltip: "Automate a wider range of instant actions to further reduce the time, effort, and errors that go into doing mundane tasks."
+                                    text: "Content Marketing",
+                                    tooltip: "Create and distribute engaging content to attract and retain audiences."
                                 },
                                 {
-                                    text: "Email & WhatsApp Business Integration",
-                                    tooltip: "Connect all major services to your saleswik account with IMAP, send mass emails, and get email open/click notifications."
+                                    text: "Social Media Marketing (SMM)",
+                                    tooltip: "Manage social media content and run targeted ad campaigns."
+                                },
+                                {
+                                    text: "Email Marketing",
+                                    tooltip: "Design and execute personalized email campaigns for better engagement."
+                                },
+                                {
+                                    text: "Influencer Marketing",
+                                    tooltip: "Partner with influencers to endorse products and reach new audiences."
+                                },
+                                {
+                                    text: "Conversion Rate Optimization (CRO)",
+                                    tooltip: "Optimize websites to increase conversion rates through data analysis."
+                                },
+                                {
+                                    text: "Analytics and Reporting",
+                                    tooltip: "Monitor and analyze marketing metrics to inform strategic decisions."
+                                },
+                                {
+                                    text: "Online Reputation Management (ORM)",
+                                    tooltip: "Manage online reviews and feedback to maintain a positive brand image."
+                                },
+                                {
+                                    text: "Mobile Marketing",
+                                    tooltip: "Optimize marketing strategies for mobile users and mobile-specific behaviors."
+                                },
+                                {
+                                    text: "Customer Relationship Management (CRM)",
+                                    tooltip: "Use CRM systems to manage leads and personalize marketing efforts."
+                                },
+                                {
+                                    text: "Marketing Automation",
+                                    tooltip: "Automate marketing tasks with tools like HubSpot, Marketo, or Mailchimp."
                                 },
                             ]
                         },
                         {
                             id: 3,
-                            name: "Business",
+                            name: "Elite",
                             // price: "5,000",
                             // mrp: "50,000",
                             link: "/digital-marketing/",
@@ -165,20 +246,52 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines",
-                                    tooltip: "Get aquick summary of every customer-facing operation by creating distinct pipelines for each team."
+                                    text: "Search Engine Optimization (SEO)",
+                                    tooltip: "Improve rankings with on-page and off-page SEO techniques."
                                 },
                                 {
-                                    text: "100000 Records",
-                                    tooltip: "Each row of data you enter in pieplines, contacts, companies, activities and notes are called records in saleswik. You can purchase additional records if you need to store more than 100000 records."
+                                    text: "Pay-Per-Click Advertising (PPC)",
+                                    tooltip: "Manage paid ads on search engines and social media for targeted visibility."
                                 },
                                 {
-                                    text: "Advanced automation (50)",
-                                    tooltip: "Schedule workflows that are triggered at specified time intervals."
+                                    text: "Content Marketing",
+                                    tooltip: "Create and distribute engaging content to attract and retain audiences."
                                 },
                                 {
-                                    text: "Stage transition rules",
-                                    tooltip: "Set up rules for moving deals in your pipelines, create checkpoints to enxure deals properly transition between stages."
+                                    text: "Social Media Marketing (SMM)",
+                                    tooltip: "Manage social media content and run targeted ad campaigns."
+                                },
+                                {
+                                    text: "Email Marketing",
+                                    tooltip: "Design and execute personalized email campaigns for better engagement."
+                                },
+                                {
+                                    text: "Influencer Marketing",
+                                    tooltip: "Partner with influencers to endorse products and reach new audiences."
+                                },
+                                {
+                                    text: "Conversion Rate Optimization (CRO)",
+                                    tooltip: "Optimize websites to increase conversion rates through data analysis."
+                                },
+                                {
+                                    text: "Analytics and Reporting",
+                                    tooltip: "Monitor and analyze marketing metrics to inform strategic decisions."
+                                },
+                                {
+                                    text: "Online Reputation Management (ORM)",
+                                    tooltip: "Manage online reviews and feedback to maintain a positive brand image."
+                                },
+                                {
+                                    text: "Mobile Marketing",
+                                    tooltip: "Optimize marketing strategies for mobile users and mobile-specific behaviors."
+                                },
+                                {
+                                    text: "Customer Relationship Management (CRM)",
+                                    tooltip: "Use CRM systems to manage leads and personalize marketing efforts."
+                                },
+                                {
+                                    text: "Marketing Automation",
+                                    tooltip: "Automate marketing tasks with tools like HubSpot, Marketo, or Mailchimp."
                                 },
                             ]
                         }
@@ -191,36 +304,52 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Starter",
+                            name: "Lite",
                             price: "1,250",
                             mrp: "5,000",
                             link: "/website-development/",
                             tag: "/user/quartly/billed quartly",
-                            description: "Start with our starter plan and upgrade only when you need additional features.",
+                            description: "Start with our Lite plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
                                 {
-                                    text: "single Pipelines",
-                                    tooltip: "get a quick summary fo your customer-facing process and manage opportunities across different stages."
+                                    text: "Custom Website Design",
+                                    tooltip: "Tailored designs to fit your unique brand identity."
                                 },
                                 {
-                                    text: "500 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities and notes are called records in saleswik."
+                                    text: "Responsive Web Development",
+                                    tooltip: "Optimized for seamless experiences on all devices."
                                 },
                                 {
-                                    text: "Automations (3)",
-                                    tooltip: "Automate repetitive actions by setting up triggers and specifying the conditions to be met for the execution of the actions."
+                                    text: "Content Management System (CMS) Integration",
+                                    tooltip: "Efficient CMS solutions for easy content updates."
                                 },
                                 {
-                                    text: "telephony",
-                                    tooltip: "Make and receive phone calls, record them , set up automated voice responses, and use call routing--dicrectly in saleswik."
+                                    text: "E-commerce Development",
+                                    tooltip: "Robust online stores to boost your sales."
+                                },
+                                {
+                                    text: "Custom Web Application Development",
+                                    tooltip: "Bespoke applications to meet your business needs."
+                                },
+                                {
+                                    text: "SEO and Performance Optimization",
+                                    tooltip: "Enhance visibility and speed for better rankings."
+                                },
+                                {
+                                    text: "Website Maintenance and Support",
+                                    tooltip: "Reliable support to keep your site running smoothly."
+                                },
+                                {
+                                    text: "Integration with Third-party Services",
+                                    tooltip: "Seamlessly connect with essential external tools."
                                 },
                             ]
                         },
                         {
                             id: 2,
-                            name: "Enterprise",
+                            name: "Plus",
                             price: "2,500",
                             mrp: "10,000",
                             link: "/website-development/",
@@ -231,26 +360,42 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines (3)",
-                                    tooltip: "Create distinct pipelines for every team and unify all your customer-facing operations."
+                                    text: "Custom Website Design",
+                                    tooltip: "Tailored designs to fit your unique brand identity."
                                 },
                                 {
-                                    text: "500000 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities adn notes are called records in saleswik. You can purchase additional records if you need to store more than 50000 records."
+                                    text: "Responsive Web Development",
+                                    tooltip: "Optimized for seamless experiences on all devices."
                                 },
                                 {
-                                    text: "Automations (30)",
-                                    tooltip: "Automate a wider range of instant actions to further reduce the time, effort, and errors that go into doing mundane tasks."
+                                    text: "Content Management System (CMS) Integration",
+                                    tooltip: "Efficient CMS solutions for easy content updates."
                                 },
                                 {
-                                    text: "Email & WhatsApp Business Integration",
-                                    tooltip: "Connect all major services to your saleswik account with IMAP, send mass emails, and get email open/click notifications."
+                                    text: "E-commerce Development",
+                                    tooltip: "Robust online stores to boost your sales."
+                                },
+                                {
+                                    text: "Custom Web Application Development",
+                                    tooltip: "Bespoke applications to meet your business needs."
+                                },
+                                {
+                                    text: "SEO and Performance Optimization",
+                                    tooltip: "Enhance visibility and speed for better rankings."
+                                },
+                                {
+                                    text: "Website Maintenance and Support",
+                                    tooltip: "Reliable support to keep your site running smoothly."
+                                },
+                                {
+                                    text: "Integration with Third-party Services",
+                                    tooltip: "Seamlessly connect with essential external tools."
                                 },
                             ]
                         },
                         {
                             id: 3,
-                            name: "Business",
+                            name: "Elite",
                             // price: "Custom",
                             // mrp: "50,000",
                             link: "/website-development/",
@@ -261,20 +406,36 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines",
-                                    tooltip: "Get aquick summary of every customer-facing operation by creating distinct pipelines for each team."
+                                    text: "Custom Website Design",
+                                    tooltip: "Tailored designs to fit your unique brand identity."
                                 },
                                 {
-                                    text: "100000 Records",
-                                    tooltip: "Each row of data you enter in pieplines, contacts, companies, activities and notes are called records in saleswik. You can purchase additional records if you need to store more than 100000 records."
+                                    text: "Responsive Web Development",
+                                    tooltip: "Optimized for seamless experiences on all devices."
                                 },
                                 {
-                                    text: "Advanced automation (50)",
-                                    tooltip: "Schedule workflows that are triggered at specified time intervals."
+                                    text: "Content Management System (CMS) Integration",
+                                    tooltip: "Efficient CMS solutions for easy content updates."
                                 },
                                 {
-                                    text: "Stage transition rules",
-                                    tooltip: "Set up rules for moving deals in your pipelines, create checkpoints to enxure deals properly transition between stages."
+                                    text: "E-commerce Development",
+                                    tooltip: "Robust online stores to boost your sales."
+                                },
+                                {
+                                    text: "Custom Web Application Development",
+                                    tooltip: "Bespoke applications to meet your business needs."
+                                },
+                                {
+                                    text: "SEO and Performance Optimization",
+                                    tooltip: "Enhance visibility and speed for better rankings."
+                                },
+                                {
+                                    text: "Website Maintenance and Support",
+                                    tooltip: "Reliable support to keep your site running smoothly."
+                                },
+                                {
+                                    text: "Integration with Third-party Services",
+                                    tooltip: "Seamlessly connect with essential external tools."
                                 },
                             ]
                         }
@@ -287,36 +448,52 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Starter",
+                            name: "Lite",
                             price: "2,500",
                             mrp: "5,000",
                             link: "/software-development/",
                             tag: "/user/month/billed monthly",
-                            description: "Start with our starter plan and upgrade only when you need additional features.",
+                            description: "Start with our Lite plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
                                 {
-                                    text: "single Pipelines",
-                                    tooltip: "get a quick summary fo your customer-facing process and manage opportunities across different stages."
+                                    text: "Stock Management System",
+                                    tooltip: "Track inventory levels and manage stock efficiently."
                                 },
                                 {
-                                    text: "500 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities and notes are called records in saleswik."
+                                    text: "Financial Management System",
+                                    tooltip: "Handle financial transactions and budgeting seamlessly."
                                 },
                                 {
-                                    text: "Automations (3)",
-                                    tooltip: "Automate repetitive actions by setting up triggers and specifying the conditions to be met for the execution of the actions."
+                                    text: "Payment Management System",
+                                    tooltip: "Streamline payment processing and transactions.",
                                 },
                                 {
-                                    text: "telephony",
-                                    tooltip: "Make and receive phone calls, record them , set up automated voice responses, and use call routing--dicrectly in saleswik."
+                                    text: "Asset Management System",
+                                    tooltip: "Manage and track company assets effectively.",
+                                },
+                                {
+                                    text: "Human Resources Management System",
+                                    tooltip: "Automate HR processes and manage employee data.",
+                                },
+                                {
+                                    text: "Document Management System",
+                                    tooltip: "Organize and store documents securely.",
+                                },
+                                {
+                                    text: "Project Management System",
+                                    tooltip: "Plan, track, and manage projects efficiently.",
+                                },
+                                {
+                                    text: "Lead Management System",
+                                    tooltip: "Track and manage leads through the sales process.",
                                 },
                             ]
                         },
                         {
                             id: 2,
-                            name: "Enterprise",
+                            name: "Plus",
                             price: "5,000",
                             mrp: "10,000",
                             link: "/software-development/",
@@ -327,26 +504,42 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines (3)",
-                                    tooltip: "Create distinct pipelines for every team and unify all your customer-facing operations."
+                                    text: "Stock Management System",
+                                    tooltip: "Track inventory levels and manage stock efficiently."
                                 },
                                 {
-                                    text: "500000 Records",
-                                    tooltip: "Each row of data you enter in pipelines, contacts, companies, activities adn notes are called records in saleswik. You can purchase additional records if you need to store more than 50000 records."
+                                    text: "Financial Management System",
+                                    tooltip: "Handle financial transactions and budgeting seamlessly."
                                 },
                                 {
-                                    text: "Automations (30)",
-                                    tooltip: "Automate a wider range of instant actions to further reduce the time, effort, and errors that go into doing mundane tasks."
+                                    text: "Payment Management System",
+                                    tooltip: "Streamline payment processing and transactions.",
                                 },
                                 {
-                                    text: "Email & WhatsApp Business Integration",
-                                    tooltip: "Connect all major services to your saleswik account with IMAP, send mass emails, and get email open/click notifications."
+                                    text: "Asset Management System",
+                                    tooltip: "Manage and track company assets effectively.",
+                                },
+                                {
+                                    text: "Human Resources Management System",
+                                    tooltip: "Automate HR processes and manage employee data.",
+                                },
+                                {
+                                    text: "Document Management System",
+                                    tooltip: "Organize and store documents securely.",
+                                },
+                                {
+                                    text: "Project Management System",
+                                    tooltip: "Plan, track, and manage projects efficiently.",
+                                },
+                                {
+                                    text: "Lead Management System",
+                                    tooltip: "Track and manage leads through the sales process.",
                                 },
                             ]
                         },
                         {
                             id: 3,
-                            name: "Business",
+                            name: "Elite",
                             // price: "25,000",
                             // mrp: "50,000",
                             link: "/software-development/",
@@ -357,20 +550,36 @@ export default {
                             key: "key features",
                             features: [
                                 {
-                                    text: "Team Pipelines",
-                                    tooltip: "Get aquick summary of every customer-facing operation by creating distinct pipelines for each team."
+                                    text: "Stock Management System",
+                                    tooltip: "Track inventory levels and manage stock efficiently."
                                 },
                                 {
-                                    text: "100000 Records",
-                                    tooltip: "Each row of data you enter in pieplines, contacts, companies, activities and notes are called records in saleswik. You can purchase additional records if you need to store more than 100000 records."
+                                    text: "Financial Management System",
+                                    tooltip: "Handle financial transactions and budgeting seamlessly."
                                 },
                                 {
-                                    text: "Advanced automation (50)",
-                                    tooltip: "Schedule workflows that are triggered at specified time intervals."
+                                    text: "Payment Management System",
+                                    tooltip: "Streamline payment processing and transactions.",
                                 },
                                 {
-                                    text: "Stage transition rules",
-                                    tooltip: "Set up rules for moving deals in your pipelines, create checkpoints to enxure deals properly transition between stages."
+                                    text: "Asset Management System",
+                                    tooltip: "Manage and track company assets effectively.",
+                                },
+                                {
+                                    text: "Human Resources Management System",
+                                    tooltip: "Automate HR processes and manage employee data.",
+                                },
+                                {
+                                    text: "Document Management System",
+                                    tooltip: "Organize and store documents securely.",
+                                },
+                                {
+                                    text: "Project Management System",
+                                    tooltip: "Plan, track, and manage projects efficiently.",
+                                },
+                                {
+                                    text: "Lead Management System",
+                                    tooltip: "Track and manage leads through the sales process.",
                                 },
                             ]
                         }

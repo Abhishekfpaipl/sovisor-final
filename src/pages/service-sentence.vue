@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="" style="padding-top: 70px; background-color:var(--bg-primary)">
+    <div class="" style="padding-top: 70px; background-color:var(--bg-forth);">
       <div class="container mb-3 py-5">
-        <label for="categorySelect" class="form-label text-white fs-4">Filter by Category</label>
+        <label for="categorySelect" class="form-label text-dark fs-4">Filter by Category</label>
         <select v-model="selectedCategory" class="form-select" id="categorySelect">
           <option value="">All Categories</option>
           <option v-for="category in categoriesList" :key="category" :value="category.name">{{ category.name }}</option>
@@ -31,10 +31,10 @@ export default {
   data() {
     return {
       customerList: [
-        { name: "agents", color: "#c6def1", },
-        { name: "sales person", color: "#f2c6de", },
-        { name: "marketing manager", color: "#f7d9c4", },
-        { name: "digital marketer", color: "#dbcdf0", },
+        { name: "businessman", color: "#c6def1", },
+        { name: "manufacturer", color: "#f2c6de", },
+        { name: "Service provider", color: "#f7d9c4", },
+        { name: "trader", color: "#dbcdf0", },
       ],
       categoriesList: [
         { id: 1, img: '/img/categories/Assembly.svg', name: "Assembly" },
@@ -145,9 +145,7 @@ export default {
         { id: 106, img: '', name: "Smart Watch Dealers" },
         { id: 107, img: '', name: "Drug De Addiction Centres" }
       ],
-      placesList: [
-        'Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Ahmedabad', 'Kolkata', 'Jaipur',
-      ],
+      placesList: ['Delhi NCR', 'India',],
       title: this.$route.params.id,
       sentences: [],
       selectedCategory: '',

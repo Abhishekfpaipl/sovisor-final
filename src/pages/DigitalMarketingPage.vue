@@ -1,9 +1,18 @@
 <template>
     <div>
-        <FormBanner :service="'Digital Marketing'" :category="category" :place="place" v-observe />
+        <div class="my-5">
+            <FormBanner :service="'Digital Marketing'" :category="category" :place="place" text="we are offering"
+                v-observe />
+        </div>
 
-        <LeadManagement :values="features" :title="'Factors, you will love'" v-observe />
-        <div class="container">
+        <div class="my-5">
+            <LeadManagement :values="features" :title="'Factors, you will love'" v-observe />
+        </div>
+        <div class="my-5">
+            <SalesFunnel :values="values" v-observe />
+        </div>
+
+        <div class="container my-5">
             <h1 class="text-center py-4">Digital Marketing Pricing</h1>
             <div class="table-responsive pb-4">
                 <table class="table table-bordered table-light table-striped" style="width: 100%;">
@@ -42,17 +51,27 @@
                 </table>
             </div>
         </div>
-        <AutoScrolling v-observe />
-        <Service v-observe />
-        <TempCustomers :reviews="customers" title="our customers" v-observe />
-        <Faq :questions="questions" v-observe />
-        <Counter :service="'Digital Marketing'" :serviceCount="2000" :category="'India'" :categoryCount="1500"
-            :place="'All over the world'" :placeCount="5000" v-observe />
-        <WhyChooseUs v-observe />
-        <FameFoot :service="'Digital Marketing'" :category="''" :place="''" v-observe />
-
+        <div class="my-5">
+            <AutoScrolling v-observe />
+        </div>
+        <div class="my-5">
+            <Service v-observe />
+        </div>
+        <div class="my-5">
+            <TempCustomers :reviews="customers" title="our customers" v-observe />
+        </div>
+        <div class="my-5">
+            <Faq :questions="questions" v-observe />
+        </div>
+        <div class="my-5">
+            <Counter service="Digital Marketing" :serviceCount="2000" category="India" :categoryCount="1500"
+                place="All over the world" :placeCount="5000" image="/img/smile.svg" title="our happy customers"
+                v-observe />
+        </div>
+        <div class="my-5">
+            <WhyChooseUs v-observe />
+        </div>
     </div>
-    <FooterBar />
 </template>
 
 <script>
@@ -61,8 +80,10 @@ import WhyChooseUs from '@/components/WhyChooseUs.vue'
 import TempCustomers from "@/components/TempCustomers.vue";
 import Faq from '@/components/FaqSection.vue';
 import FormBanner from '@/components/FormBanner.vue';
-import Counter from '@/components/services/SalesCounter.vue';
+import Counter from '@/components/CustomCounter.vue';
 import AutoScrolling from '@/components/services/AutoScrolling.vue';
+import SalesFunnel from "@/components/SalesFunnel.vue";
+
 export default {
     name: "DigitalMarketingPage",
     components: {
@@ -73,6 +94,7 @@ export default {
         Faq,
         Counter,
         AutoScrolling,
+        SalesFunnel,
     },
     data() {
         return {
@@ -87,24 +109,18 @@ export default {
                     price: '4,999',
                     mrp: '10,000',
                     features: [
-                        { id: 1, name: "Free Domain", included: true },
-                        { id: 2, name: "Email Id", included: true },
-                        { id: 3, name: "SSL Certificate", included: true },
-                        { id: 4, name: "Contact Form", included: true },
-                        { id: 5, name: "Mobile Responsive", included: true },
-                        { id: 6, name: "SEO friendly", included: true },
-                        { id: 7, name: "Google Location Map", included: false },
-                        { id: 8, name: "Direct Calling", included: false },
-                        { id: 9, name: "Social Links", included: false },
-                        { id: 10, name: "WhatsApp Connect", included: false },
-                        { id: 11, name: "Payment Detail", included: false },
-                        { id: 12, name: "Business Catalog", included: false },
-                        { id: 13, name: "Content Writing", included: false },
-                        { id: 14, name: "Free Update", included: false },
-                        { id: 15, name: "Brand Logo", included: false },
-                        { id: 16, name: "Development Time", included: false },
-                        { id: 17, name: "Customer Support", included: false },
-                        { id: 18, name: "Renewal Charges", included: false },
+                        { id: 1, name: "Search Engine Optimization", included: true },
+                        { id: 2, name: "Pay-Per-Click Advertising", included: true },
+                        { id: 3, name: "Content Marketing", included: true },
+                        { id: 4, name: "Social Media Marketing", included: true },
+                        { id: 5, name: "Email Marketing", included: true },
+                        { id: 6, name: "Influencer Marketing", included: true },
+                        { id: 7, name: "Conversion Rate Optimization", included: false },
+                        { id: 8, name: "Analytics and Reporting", included: false },
+                        { id: 9, name: "Online Reputation Management", included: false },
+                        { id: 10, name: "Mobile Marketing", included: false },
+                        { id: 11, name: "Customer Relationship Management", included: false },
+                        { id: 12, name: "Marketing Automation", included: false },
                     ],
                 },
                 {
@@ -114,24 +130,18 @@ export default {
                     price: '14,999',
                     mrp: '30,000',
                     features: [
-                        { id: 1, name: "Free Domain", included: true },
-                        { id: 2, name: "Email Id", included: true },
-                        { id: 3, name: "SSL Certificate", included: true },
-                        { id: 4, name: "Contact Form", included: true },
-                        { id: 5, name: "Mobile Responsive", included: true },
-                        { id: 6, name: "SEO friendly", included: true },
-                        { id: 7, name: "Google Location Map", included: true },
-                        { id: 8, name: "Direct Calling", included: true },
-                        { id: 9, name: "Social Links", included: false },
-                        { id: 10, name: "WhatsApp Connect", included: false },
-                        { id: 11, name: "Payment Detail", included: false },
-                        { id: 12, name: "Business Catalog", included: false },
-                        { id: 13, name: "Content Writing", included: false },
-                        { id: 14, name: "Free Update", included: false },
-                        { id: 15, name: "Brand Logo", included: false },
-                        { id: 16, name: "Development Time", included: false },
-                        { id: 17, name: "Customer Support", included: false },
-                        { id: 18, name: "Renewal Charges", included: false },
+                        { id: 1, name: "Search Engine Optimization", included: true },
+                        { id: 2, name: "Pay-Per-Click Advertising", included: true },
+                        { id: 3, name: "Content Marketing", included: true },
+                        { id: 4, name: "Social Media Marketing", included: true },
+                        { id: 5, name: "Email Marketing", included: true },
+                        { id: 6, name: "Influencer Marketing", included: true },
+                        { id: 7, name: "Conversion Rate Optimization", included: true },
+                        { id: 8, name: "Analytics and Reporting", included: true },
+                        { id: 9, name: "Online Reputation Management", included: false },
+                        { id: 10, name: "Mobile Marketing", included: false },
+                        { id: 11, name: "Customer Relationship Management", included: false },
+                        { id: 12, name: "Marketing Automation", included: false },
                     ],
                 },
                 {
@@ -141,127 +151,82 @@ export default {
                     price: '29,999',
                     mrp: '60,000',
                     features: [
-                        { id: 1, name: "Free Domain", included: true },
-                        { id: 2, name: "Email Id", included: true },
-                        { id: 3, name: "SSL Certificate", included: true },
-                        { id: 4, name: "Contact Form", included: true },
-                        { id: 5, name: "Mobile Responsive", included: true },
-                        { id: 6, name: "SEO friendly", included: true },
-                        { id: 7, name: "Google Location Map", included: true },
-                        { id: 8, name: "Direct Calling", included: true },
-                        { id: 9, name: "Social Links", included: true },
-                        { id: 10, name: "WhatsApp Connect", included: true },
-                        { id: 11, name: "Payment Detail", included: true },
-                        { id: 12, name: "Business Catalog", included: true },
-                        { id: 13, name: "Content Writing", included: true },
-                        { id: 14, name: "Free Update", included: true },
-                        { id: 15, name: "Brand Logo", included: false },
-                        { id: 16, name: "Development Time", included: false },
-                        { id: 17, name: "Customer Support", included: false },
-                        { id: 18, name: "Renewal Charges", included: false },
-                    ],
-                },
-                {
-                    id: 4,
-                    title: "Pro",
-                    description: "Designer Website",
-                    price: '49,999',
-                    mrp: '90,000',
-                    features: [
-                        { id: 1, name: "Free Domain", included: true },
-                        { id: 2, name: "Email Id", included: true },
-                        { id: 3, name: "SSL Certificate", included: true },
-                        { id: 4, name: "Contact Form", included: true },
-                        { id: 5, name: "Mobile Responsive", included: true },
-                        { id: 6, name: "SEO friendly", included: true },
-                        { id: 7, name: "Google Location Map", included: true },
-                        { id: 8, name: "Direct Calling", included: true },
-                        { id: 9, name: "Social Links", included: true },
-                        { id: 10, name: "WhatsApp Connect", included: true },
-                        { id: 11, name: "Payment Detail", included: true },
-                        { id: 12, name: "Business Catalog", included: true },
-                        { id: 13, name: "Content Writing", included: true },
-                        { id: 14, name: "Free Update", included: true },
-                        { id: 15, name: "Brand Logo", included: true },
-                        { id: 16, name: "Development Time", included: false },
-                        { id: 17, name: "Customer Support", included: false },
-                        { id: 18, name: "Renewal Charges", included: false },
+                        { id: 1, name: "Search Engine Optimization", included: true },
+                        { id: 2, name: "Pay-Per-Click Advertising", included: true },
+                        { id: 3, name: "Content Marketing", included: true },
+                        { id: 4, name: "Social Media Marketing", included: true },
+                        { id: 5, name: "Email Marketing", included: true },
+                        { id: 6, name: "Influencer Marketing", included: true },
+                        { id: 7, name: "Conversion Rate Optimization", included: true },
+                        { id: 8, name: "Analytics and Reporting", included: true },
+                        { id: 9, name: "Online Reputation Management", included: true },
+                        { id: 10, name: "Mobile Marketing", included: true },
+                        { id: 11, name: "Customer Relationship Management", included: true },
+                        { id: 12, name: "Marketing Automation", included: true },
                     ],
                 },
             ],
             features: [
                 {
-                    id: 1,
-                    icon: 'bi-search fs-4',
-                    title: "Search Engine Optimization (SEO)",
-                    description: "Improve rankings with on-page and off-page SEO techniques.",
+                    icon: 'bi-shield-check',
+                    title: "Integrity properties",
+                    description: "Demonstrating transparency and honesty in all our commitments and actions, ensuring trust and reliability in every interaction.",
                 },
                 {
-                    id: 2,
-                    icon: 'bi-cash-stack fs-4',
-                    title: "Pay-Per-Click Advertising (PPC)",
-                    description: "Manage paid ads on search engines and social media for targeted visibility.",
+                    icon: 'bi-star',
+                    title: "Excellence",
+                    description: "Going beyond expectations by understanding your needs deeply and meticulously crafting solutions that surpass ordinary standards.",
                 },
                 {
-                    id: 3,
-                    icon: 'bi-file-earmark-text fs-4',
-                    title: "Content Marketing",
-                    description: "Create and distribute engaging content to attract and retain audiences.",
+                    icon: 'bi-people',
+                    title: "Teamwork",
+                    description: "Leveraging collective strengths to provide you with adaptable and superior solutions, fostering a collaborative environment where every voice contributes meaningfully."
                 },
                 {
-                    id: 4,
-                    icon: 'bi-megaphone fs-4',
-                    title: "Social Media Marketing (SMM)",
-                    description: "Manage social media content and run targeted ad campaigns.",
+                    icon: 'bi-shield-lock',
+                    title: "Privacy and safety",
+                    description: "Create powerful digital safety solutions for your workforce,increasing employee engagement with important processes and procedures effiiciently whilst ensuring the highest levels of compliance.",
                 },
                 {
-                    id: 5,
-                    icon: 'bi-envelope fs-4',
-                    title: "Email Marketing",
-                    description: "Design and execute personalized email campaigns for better engagement.",
+                    icon: 'bi-graph-up',
+                    title: "Quality services",
+                    description: "Crafting bespoke web designs that drive impactful user experiences and convey a distinct brand message, led by experienced designers from concept to execution.",
                 },
                 {
-                    id: 65,
-                    icon: 'bi-person-circle fs-4',
-                    title: "Influencer Marketing",
-                    description: "Partner with influencers to endorse products and reach new audiences.",
+                    icon: 'bi-palette',
+                    title: "Creativity",
+                    description: "Solving challenges innovatively, refusing to settle for ordinary solutions, and creating bespoke strategies that not only solve problems but also distinguish your business.",
                 },
                 {
-                    id: 63,
-                    icon: 'bi-graph-up fs-4',
-                    title: "Conversion Rate Optimization (CRO)",
-                    description: "Optimize websites to increase conversion rates through data analysis.",
+                    icon: 'bi-calendar-check ',
+                    title: "Dependability",
+                    description: "Consistently delivering on promises, meeting deadlines with proactive communication, and treating your business's success as our own commitment.",
                 },
                 {
-                    id: 54,
-                    icon: 'bi-bar-chart fs-4',
-                    title: "Analytics and Reporting",
-                    description: "Monitor and analyze marketing metrics to inform strategic decisions.",
+                    icon: 'bi-emoji-laughing',
+                    title: "Fun",
+                    description: "Cultivating a positive and enjoyable workplace environment, fostering creativity, exceptional client service, and the well-being of our team members through humor and camaraderie.",
                 },
                 {
-                    id: 125,
-                    icon: 'bi-star fs-4',
-                    title: "Online Reputation Management (ORM)",
-                    description: "Manage online reviews and feedback to maintain a positive brand image.",
+                    icon: 'bi-hand-thumbs-up ',
+                    title: "Helping Hand",
+                    description: "Fostering a supportive and positive workplace environment."
                 },
                 {
-                    id: 68,
-                    icon: 'bi-phone fs-4',
-                    title: "Mobile Marketing",
-                    description: "Optimize marketing strategies for mobile users and mobile-specific behaviors.",
+                    icon: 'bi-gem',
+                    title: "World Class Quality",
+                    description: "Delivering exceptional quality in all our services."
                 },
                 {
-                    id: 30,
-                    icon: 'bi-people fs-4',
-                    title: "Customer Relationship Management (CRM)",
-                    description: "Use CRM systems to manage leads and personalize marketing efforts.",
+                    icon: 'bi-tags',
+                    title: "Competitive Pricing",
+                    description: "Offering the best prices without compromising on quality."
                 },
                 {
-                    id: 31,
-                    icon: 'bi-gear fs-4',
-                    title: "Marketing Automation",
-                    description: "Automate marketing tasks with tools like HubSpot, Marketo, or Mailchimp.",
-                },
+                    icon: 'bi-lightning ',
+                    title: "Incredibly Fast Delivery",
+                    description: "Ensuring quick and efficient delivery for our clients."
+                }
             ],
             questions: [
                 {
@@ -432,7 +397,65 @@ export default {
                     rating: '5',
                     text: "Saleswik has helped us to decentralize information. Now all the team has access to the documents and sales information. We no longer have the problem that some documents is stored on the PC of a teammate who is not accessible at the time."
                 },
-            ]
+            ],
+            values: [
+                {
+                    id: 1,
+                    icon: 'bi-funnel fs-4',
+                    title: "Business & Competitors Analysis",
+                    color: '#e76365',
+                    description: "Buy targeted advertising on Facebook and Instagram or Google and start driving high- quality traffic to your Saleswik landing pages.",
+                },
+                {
+                    id: 2,
+                    icon: 'bi-diagram-3 fs-4',
+                    title: "Development of Strategies ",
+                    color: "#f5925e",
+                    description: "Select a high-converting Saleswik landing page which is more optimized for your business goals. ",
+                },
+                {
+                    id: 3,
+                    icon: 'bi-hand-thumbs-up fs-4',
+                    title: "Validation of Required Digital Places ",
+                    color: "#f8a42a",
+                    description: "Get more conversions by capturing the contact details of the visitors, visiting your Saleswik landing page.",
+                },
+                {
+                    id: 4,
+                    icon: 'bi-megaphone fs-4',
+                    title: "Optimization of Digital Presence",
+                    color: "#f8d452",
+                    description: "Set up campaigns to nurture your leads and build relationships and turn your expertise into a commodity",
+                },
+                {
+                    id: 5,
+                    icon: 'bi-telephone fs-4',
+                    title: "Run Content Creation Program",
+                    color: "#fbd453",
+                    description: "From your sales page and order form templates in seconds to sell your products and services online.",
+                },
+                {
+                    id: 6,
+                    icon: 'bi-whatsapp fs-4',
+                    title: "Run Reputation Management Program",
+                    color: "#c9d825",
+                    description: "Increase your revenue and promote limited-time offers immediately after a customer's purchase.",
+                },
+                {
+                    id: 7,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Provide Lead Management System",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+                {
+                    id: 8,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Successfully Achievement of Goals",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+            ],
         }
     },
     created() {

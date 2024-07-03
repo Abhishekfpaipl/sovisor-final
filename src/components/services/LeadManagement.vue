@@ -9,7 +9,7 @@
                 <div class="position-relative w-100 d-flex justify-content-center align-items-center flex-fill">
                     <div class="card position-relative w-100 p-3 d-flex flex-column bg-light">
                         <div class="image text-center">
-                            <i class="bi" :class="lead.icon"></i>
+                            <i class="bi fs-4" :class="lead.icon"></i>
                             <p class="text-capitalize text-ellipsis2">{{ lead.title }}</p>
                         </div>
                         <div class="content small text-ellipsis4">

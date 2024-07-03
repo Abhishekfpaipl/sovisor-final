@@ -1,53 +1,49 @@
 <template>
     <div>
         <div class="my-5">
-            <ServicesFormBanner brandColorOne="#125252" brandName="work wity" :text="text" :customer="customer"
-                :service="service" :category="category" :place="place" v-observe />
+            <FormBanner brandColorOne="#125252" :text="text" :customer="customer" :service="service"
+                :category="category" :place="place" v-observe />
         </div>
         <div class="my-5">
-            <ServicesLeadManagement :values="leads" title="Features, that boost your attention!" v-observe />
-        </div>
-
-        <div class="my-5">
-            <SalesFunnel v-observe />
+            <TestComponent />
         </div>
         <div class="my-5">
+            <ServicesLeadManagement :values="leads" title="What makes us different ?" v-observe />
+        </div>
+        <div class="mt-5">
             <WhyChooseUs :description="whychooseUs" title="why choose us" image="/img/whychooseUs.svg" v-observe />
         </div>
-        <div class="my-5">
+        <div class="">
             <AutoScrolling v-observe />
         </div>
         <div class="my-5">
             <TempCustomers :reviews="customers" title="our customers" v-observe />
         </div>
         <div class="my-5">
-            <ServicesSalesCounter :service="service" :serviceCount="2000" :category="category" :categoryCount="1500"
-                :place="place" :placeCount="5000" v-observe />
-        </div>
-        <div class="my-5">
-            <ServicesFameFoot service="Website Development" :category="null" :place="null" v-observe />
+            <CustomCounter :service="service" :serviceCount="2000" :category="category" :categoryCount="1500"
+                :place="place" :placeCount="5000" image="/img/smile.svg" title="our happy customers" v-observe />
         </div>
     </div>
 </template>
 <script>
-import ServicesFormBanner from "@/components/services/FormBanner.vue";
+import FormBanner from "@/components/FormBanner.vue";
+import TestComponent from "@/components/TestComponent.vue";
 import ServicesLeadManagement from "@/components/services/LeadManagement.vue";
 import WhyChooseUs from "@/components/WhyChooseUs.vue";
 import AutoScrolling from "@/components/services/AutoScrolling.vue";
 import TempCustomers from "@/components/TempCustomers.vue";
-import ServicesSalesCounter from "@/components/services/SalesCounter.vue";
-import SalesFunnel from "@/components/SalesFunnel.vue";
+import CustomCounter from "@/components/CustomCounter.vue";
 
 export default {
     name: "ServicePage",
     components: {
-        ServicesFormBanner,
+        FormBanner,
+        TestComponent,
         ServicesLeadManagement,
-        SalesFunnel,
         WhyChooseUs,
         AutoScrolling,
         TempCustomers,
-        ServicesSalesCounter,
+        CustomCounter,
     },
     data() {
         return {
@@ -58,107 +54,65 @@ export default {
             place: '',
             leads: [
                 {
-                    id: 432,
-                    icon: 'bi-magnet fs-4',
-                    title: 'sales funnel landing page',
-                    description: 'Get in touch with customers by using our contact form and sync their data with a CRM of your favour.'
+                    icon: 'bi-shield-check',
+                    title: "Integrity properties",
+                    description: "Demonstrating transparency and honesty in all our commitments and actions, ensuring trust and reliability in every interaction.",
                 },
                 {
-                    id: 1,
-                    icon: 'bi-funnel fs-4',
-                    title: "Lead capture automation",
-                    description: "Capture leads from all sources- website, facbook, google, lead providers, referrals - onto one platform with zero leakage.",
+                    icon: 'bi-star',
+                    title: "Excellence",
+                    description: "Going beyond expectations by understanding your needs deeply and meticulously crafting solutions that surpass ordinary standards.",
                 },
                 {
-                    id: 2,
-                    icon: 'bi-diagram-3 fs-4',
-                    title: "Lead distribution",
-                    description: "Easily track and distribute leads between your teams based on requirements or other dynamic criteria.",
+                    icon: 'bi-people',
+                    title: "Teamwork",
+                    description: "Leveraging collective strengths to provide you with adaptable and superior solutions, fostering a collaborative environment where every voice contributes meaningfully."
                 },
                 {
-                    id: 4,
-                    icon: 'bi-megaphone fs-4',
-                    title: "Sales automation",
-                    description: "Automate sales processes. Communicate with leads across various channels.",
+                    icon: 'bi-shield-lock',
+                    title: "Privacy and safety",
+                    description: "Create powerful digital safety solutions for your workforce,increasing employee engagement with important processes and procedures effiiciently whilst ensuring the highest levels of compliance.",
                 },
                 {
-                    id: 5,
-                    icon: 'bi-telephone fs-4',
-                    title: "Direct Call Integration",
-                    description: "Call prospects in just one click . Track and record conversations to ensure high compliance and productivity.",
+                    icon: 'bi-graph-up',
+                    title: "Quality services",
+                    description: "Crafting bespoke web designs that drive impactful user experiences and convey a distinct brand message, led by experienced designers from concept to execution.",
                 },
                 {
-                    id: 65,
-                    icon: 'bi-whatsapp fs-4',
-                    title: "WhatsApp Call Integration",
-                    description: "Call prospects in just one click . Track and record conversations to ensure high compliance and productivity.",
+                    icon: 'bi-palette',
+                    title: "Creativity",
+                    description: "Solving challenges innovatively, refusing to settle for ordinary solutions, and creating bespoke strategies that not only solve problems but also distinguish your business.",
                 },
                 {
-                    id: 6,
-                    icon: 'bi-clipboard-data fs-4',
-                    title: "Real-time reports",
-                    description: "Over 135+ reports help you measure every piece of your process.",
+                    icon: 'bi-calendar-check ',
+                    title: "Dependability",
+                    description: "Consistently delivering on promises, meeting deadlines with proactive communication, and treating your business's success as our own commitment.",
                 },
                 {
-                    id: 32,
-                    icon: 'bi-box-arrow-in-down-left fs-4',
-                    title: "Import Leads",
-                    description: "Over 135+ reports help you measure every piece of your process - from campaign spending to sales closure rates.",
+                    icon: 'bi-emoji-laughing',
+                    title: "Fun",
+                    description: "Cultivating a positive and enjoyable workplace environment, fostering creativity, exceptional client service, and the well-being of our team members through humor and camaraderie.",
                 },
                 {
-                    id: 43,
-                    icon: 'bi-box-arrow-up-right fs-4',
-                    title: "Export Leads",
-                    description: "Over 135+ reports help you measure every piece of your process - from campaign spending to sales closure rates.",
+                    icon: 'bi-hand-thumbs-up ',
+                    title: "Helping Hand",
+                    description: "Fostering a supportive and positive workplace environment."
                 },
                 {
-                    id: 13,
-                    icon: 'bi-stars fs-4',
-                    image: 'img/features/custom.png',
-                    title: 'Leads Auto qualification',
-                    description: 'Qualify leads based on their region, behavior, and other parameters'
-                },
-
-                {
-                    id: 72,
-                    icon: 'bi-archive fs-4',
-                    title: 'Add relevant details',
-                    description: 'Add notes, labels, or other documents to record in CRM.'
-                },
-
-                {
-                    id: 31,
-                    icon: 'bi-stack-overflow fs-4',
-                    image: 'img/features/wallet.png',
-                    title: 'Automate activites',
-                    description: 'Create workflows for faster, error-free communication and service.'
+                    icon: 'bi-gem',
+                    title: "World Class Quality",
+                    description: "Delivering exceptional quality in all our services."
                 },
                 {
-                    id: 623,
-                    icon: 'bi-people fs-4',
-                    title: 'User management',
-                    description: 'Invite all your team members, upload them by Excel/CSV or connect with Microsoft 365 or google workspace.'
+                    icon: 'bi-tags',
+                    title: "Competitive Pricing",
+                    description: "Offering the best prices without compromising on quality."
                 },
                 {
-                    id: 823,
-                    icon: ' bi-ui-checks fs-4',
-                    title: 'Stay connected',
-                    description: 'Receive real-time notification about activities in CRM across devices.'
-                },
-                {
-                    id: 823,
-                    icon: ' bi-calendar2-date fs-4',
-                    title: 'Schedule Leads',
-                    description: 'Receive real-time notification about activities in CRM across devices.'
-                },
-                {
-                    id: 54,
-                    icon: ' bi-lightning fs-4',
-                    image: 'img/features/uniform.png',
-                    title: 'Close deals quickly',
-                    description: "Generate invoices within CRM from prospect's record and update the deal stage and status."
-                },
-
+                    icon: 'bi-lightning ',
+                    title: "Incredibly Fast Delivery",
+                    description: "Ensuring quick and efficient delivery for our clients."
+                }
             ],
             faqs: [
                 {

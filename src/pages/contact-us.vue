@@ -1,5 +1,5 @@
 <template>
-    <div class="" style="padding-top: 70px;">
+    <div class="" style="padding-top: 66px;">
         <div class="text-white py-5" style=" background-color:var(--brand-color) ;padding-bottom: 6rem !important;"
             v-observe>
             <h1 class="text-center mb-0 fw-bold">Contact Page</h1>
@@ -34,7 +34,7 @@
                             </label>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-danger py-2 fs-5 w-100 rounded-0 text-white" type="submit">Submit</button>
+                            <button class="btn btn-warning py-2 fs-5 w-100 rounded-0 text-white" type="submit">Submit</button>
                         </div>
                     </form>
 

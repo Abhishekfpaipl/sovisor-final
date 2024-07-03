@@ -1,13 +1,20 @@
 <template>
     <div>
-        <FormBanner :service="'Website Development'" :category="category" :place="place" v-observe />
-        <LeadManagement :values="links" :title="'Factors, you will love'" v-observe />
+        <div class="my-5">
+            <FormBanner :service="'Website Development'" :category="category" :place="place" text="we are offering"
+                v-observe />
+        </div>
+        <LeadManagement :values="links" title="What makes us different ?" v-observe />
         <WebsiteDevelopmentText v-observe />
+        <div class="my-5">
+            <SalesFunnel :values="values" v-observe />
+        </div>
         <AutoScrolling v-observe />
         <TempCustomers :reviews="customers" title="our customers" v-observe />
         <Faq :questions="questions" v-observe />
         <Counter :service="'Website Development'" :serviceCount="2000" :category="'India'" :categoryCount="1500"
-            :place="'All over the world'" :placeCount="5000" v-observe />
+            :place="'All over the world'" :placeCount="5000" image="/img/smile.svg" title="our happy customers"
+            v-observe />
         <WhyChooseUs v-observe />
     </div>
     <p></p>
@@ -19,8 +26,10 @@ import WebsiteDevelopmentText from '@/components/WebsiteDevelopmentText.vue'
 import TempCustomers from "@/components/TempCustomers.vue";
 import Faq from '@/components/FaqSection.vue';
 import FormBanner from '@/components/FormBanner.vue';
-import Counter from '@/components/services/SalesCounter.vue';
+import Counter from '@/components/CustomCounter.vue';
 import AutoScrolling from '@/components/services/AutoScrolling.vue';
+import SalesFunnel from "@/components/SalesFunnel.vue";
+
 export default {
     name: "WebsiteDevelopmentPage",
     components: {
@@ -32,6 +41,7 @@ export default {
         Faq,
         Counter,
         AutoScrolling,
+        SalesFunnel,
     },
     data() {
         return {
@@ -40,53 +50,65 @@ export default {
             place: '',
             links: [
                 {
-                    id: 1,
-                    icon: 'bi-palette fs-4',
-                    title: "Custom Website Design",
-                    description: "Tailored designs to fit your unique brand identity.",
+                    icon: 'bi-shield-check',
+                    title: "Integrity properties",
+                    description: "Demonstrating transparency and honesty in all our commitments and actions, ensuring trust and reliability in every interaction.",
                 },
                 {
-                    id: 2,
-                    icon: 'bi-phone-landscape fs-4',
-                    title: "Responsive Web Development",
-                    description: "Optimized for seamless experiences on all devices.",
+                    icon: 'bi-star',
+                    title: "Excellence",
+                    description: "Going beyond expectations by understanding your needs deeply and meticulously crafting solutions that surpass ordinary standards.",
                 },
                 {
-                    id: 3,
-                    icon: 'bi-file-earmark-code fs-4',
-                    title: "Content Management System (CMS) Integration",
-                    description: "Efficient CMS solutions for easy content updates.",
+                    icon: 'bi-people',
+                    title: "Teamwork",
+                    description: "Leveraging collective strengths to provide you with adaptable and superior solutions, fostering a collaborative environment where every voice contributes meaningfully."
                 },
                 {
-                    id: 4,
-                    icon: 'bi-cart fs-4',
-                    title: "E-commerce Development",
-                    description: "Robust online stores to boost your sales.",
+                    icon: 'bi-shield-lock',
+                    title: "Privacy and safety",
+                    description: "Create powerful digital safety solutions for your workforce,increasing employee engagement with important processes and procedures effiiciently whilst ensuring the highest levels of compliance.",
                 },
                 {
-                    id: 5,
-                    icon: 'bi-code-slash fs-4',
-                    title: "Custom Web Application Development",
-                    description: "Bespoke applications to meet your business needs.",
+                    icon: 'bi-graph-up',
+                    title: "Quality services",
+                    description: "Crafting bespoke web designs that drive impactful user experiences and convey a distinct brand message, led by experienced designers from concept to execution.",
                 },
                 {
-                    id: 6,
-                    icon: 'bi-graph-up fs-4',
-                    title: "SEO and Performance Optimization",
-                    description: "Enhance visibility and speed for better rankings.",
+                    icon: 'bi-palette',
+                    title: "Creativity",
+                    description: "Solving challenges innovatively, refusing to settle for ordinary solutions, and creating bespoke strategies that not only solve problems but also distinguish your business.",
                 },
                 {
-                    id: 7,
-                    icon: 'bi-tools fs-4',
-                    title: "Website Maintenance and Support",
-                    description: "Reliable support to keep your site running smoothly.",
+                    icon: 'bi-calendar-check ',
+                    title: "Dependability",
+                    description: "Consistently delivering on promises, meeting deadlines with proactive communication, and treating your business's success as our own commitment.",
                 },
                 {
-                    id: 8,
-                    icon: 'bi-plug fs-4',
-                    title: "Integration with Third-party Services",
-                    description: "Seamlessly connect with essential external tools.",
+                    icon: 'bi-emoji-laughing',
+                    title: "Fun",
+                    description: "Cultivating a positive and enjoyable workplace environment, fostering creativity, exceptional client service, and the well-being of our team members through humor and camaraderie.",
                 },
+                {
+                    icon: 'bi-hand-thumbs-up ',
+                    title: "Helping Hand",
+                    description: "Fostering a supportive and positive workplace environment."
+                },
+                {
+                    icon: 'bi-gem',
+                    title: "World Class Quality",
+                    description: "Delivering exceptional quality in all our services."
+                },
+                {
+                    icon: 'bi-tags',
+                    title: "Competitive Pricing",
+                    description: "Offering the best prices without compromising on quality."
+                },
+                {
+                    icon: 'bi-lightning ',
+                    title: "Incredibly Fast Delivery",
+                    description: "Ensuring quick and efficient delivery for our clients."
+                }
             ],
             questions: [
                 {
@@ -267,7 +289,65 @@ export default {
                     rating: '5',
                     text: "Saleswik has helped us to decentralize information. Now all the team has access to the documents and sales information. We no longer have the problem that some documents is stored on the PC of a teammate who is not accessible at the time."
                 },
-            ]
+            ],
+            values: [
+                {
+                    id: 1,
+                    icon: 'bi-funnel fs-4',
+                    title: "Business & Competitors Analysis",
+                    color: '#e76365',
+                    description: "Buy targeted advertising on Facebook and Instagram or Google and start driving high- quality traffic to your Saleswik landing pages.",
+                },
+                {
+                    id: 2,
+                    icon: 'bi-diagram-3 fs-4',
+                    title: "Development of Strategies ",
+                    color: "#f5925e",
+                    description: "Select a high-converting Saleswik landing page which is more optimized for your business goals. ",
+                },
+                {
+                    id: 3,
+                    icon: 'bi-hand-thumbs-up fs-4',
+                    title: "Validation of Required Digital Places ",
+                    color: "#f8a42a",
+                    description: "Get more conversions by capturing the contact details of the visitors, visiting your Saleswik landing page.",
+                },
+                {
+                    id: 4,
+                    icon: 'bi-megaphone fs-4',
+                    title: "Optimization of Digital Presence",
+                    color: "#f8d452",
+                    description: "Set up campaigns to nurture your leads and build relationships and turn your expertise into a commodity",
+                },
+                {
+                    id: 5,
+                    icon: 'bi-telephone fs-4',
+                    title: "Run Content Creation Program",
+                    color: "#fbd453",
+                    description: "From your sales page and order form templates in seconds to sell your products and services online.",
+                },
+                {
+                    id: 6,
+                    icon: 'bi-whatsapp fs-4',
+                    title: "Run Reputation Management Program",
+                    color: "#c9d825",
+                    description: "Increase your revenue and promote limited-time offers immediately after a customer's purchase.",
+                },
+                {
+                    id: 7,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Provide Lead Management System",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+                {
+                    id: 8,
+                    icon: 'bi-clipboard-data fs-4',
+                    title: "Successfully Achievement of Goals",
+                    color: "#5ccd5f",
+                    description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
+                },
+            ],
         }
     },
     created() {

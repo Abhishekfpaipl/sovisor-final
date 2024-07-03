@@ -1,6 +1,6 @@
 <template>
     <div style="padding-top: 70px;">
-        <div class="container py-5">
+        <div class="container py-5 mb-5">
             <div class="row">
                 <div class="col-12 col-md-6 text-center">
                     <h1 class="mb-4 text-capitalize">Book free demo.</h1>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <p class="text-center py-4 text-white mb-0 position-fixed bottom-0 w-100" style="background-color: var(--bg-primary);">Questions? Talk to an
+        <p class="text-center py-4 text-white mb-0 position-fixed bottom-0 w-100" style="background-color: var(--brand-color);">Questions? Talk to an
             expert: 8860012001</p>
     </div>
 </template>
