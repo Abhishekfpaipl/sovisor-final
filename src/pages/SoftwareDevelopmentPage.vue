@@ -5,9 +5,6 @@
                 v-observe />
         </div>
         <div class="my-5">
-            <LeadManagement :values="features" title="What makes us different ?" v-observe />
-        </div>
-        <div class="my-5">
             <div class="container">
                 <h1 class="text-center py-4">Software Development Pricing</h1>
                 <div class="table-responsive pb-4">
@@ -50,6 +47,10 @@
             </div>
         </div>
         <div class="my-5">
+            <LeadManagement :values="features" title="What makes us different ?" v-observe />
+        </div>
+       
+        <div class="my-5">
             <SalesFunnel :values="values" v-observe />
         </div>
         <div class="my-5">
@@ -59,7 +60,7 @@
             <TempCustomers :reviews="customers" title="our customers" v-observe />
         </div>
         <div class="my-5">
-            <Faq :questions="questions" v-observe />
+            <Faq :faqs="faqs" v-observe />
         </div>
         <div class="my-5">
             <Counter :service="'Software Development'" :serviceCount="2000" :category="'India'" :categoryCount="1500"
@@ -434,7 +435,108 @@ export default {
 
                     ],
                 },
+                {
+                    id: 3,
+                    title: "Pro",
+                    description: "Catalog Website",
+                    price: '2,499',
+                    mrp: '5,000',
+                    features: [
+                        { id: 1, name: "Stock Management System", included: true },
+                        { id: 2, name: "Financial Management System", included: true },
+                        { id: 3, name: "Payment Management System", included: true },
+                        { id: 4, name: "Asset Management System", included: true },
+                        { id: 5, name: "Human Resources Management System", included: true },
+                        { id: 6, name: "Document Management System", included: true },
+                        { id: 7, name: "Project Management System", included: true },
+                        { id: 8, name: "Lead Management System", included: true },
+
+                    ],
+                },
             ],
+            faqs: [
+    {
+        name: "Stock Management System",
+        plans: [
+            { question: "What is a stock management system?", answer: "A stock management system is a tool that helps businesses keep track of their inventory. It monitors stock levels, orders, sales, and deliveries to ensure you always have the right amount of stock on hand." },
+            { question: "Why is stock management important?", answer: "It’s important because it helps prevent overstocking or running out of products. Good stock management ensures that you can meet customer demand without holding too much inventory." },
+            { question: "Can a stock management system help reduce costs?", answer: "Yes, by optimizing inventory levels, a stock management system can reduce storage costs and minimize losses from unsold goods or spoilage." },
+            { question: "How does a stock management system work?", answer: "It works by tracking inventory through barcodes, RFID tags, or manual entry. The system updates stock levels in real-time as products are sold or received." },
+            { question: "Is a stock management system suitable for small businesses?", answer: "Yes, even small businesses can benefit from a stock management system. It helps streamline operations and ensures efficient inventory control." }
+        ]
+    },
+    {
+        name: "Financial Management System",
+        plans: [
+            { question: "What is a financial management system?", answer: "A financial management system is software that helps businesses manage their financial activities, such as budgeting, accounting, invoicing, and reporting." },
+            { question: "Why is a financial management system important?", answer: "It’s important because it provides accurate financial data, helps in making informed decisions, and ensures compliance with financial regulations." },
+            { question: "What features should I look for in a financial management system?", answer: "Look for features like automated bookkeeping, expense tracking, budgeting tools, financial reporting, and integration with other business systems." },
+            { question: "Can a financial management system help with tax preparation?", answer: "Yes, it can simplify tax preparation by keeping accurate financial records, generating necessary reports, and ensuring compliance with tax laws." },
+            { question: "Is it difficult to implement a financial management system?", answer: "Implementation can vary depending on the complexity of your business, but many systems offer user-friendly interfaces and support to make the process easier." }
+        ]
+    },
+    {
+        name: "Payment Management System",
+        plans: [
+            { question: "What is a payment management system?", answer: "A payment management system is a tool that handles the processing of payments from customers, including credit card transactions, electronic transfers, and other payment methods." },
+            { question: "Why is a payment management system important?", answer: "It’s important because it ensures secure, fast, and accurate processing of payments, which improves customer satisfaction and cash flow." },
+            { question: "How does a payment management system work?", answer: "It works by integrating with your sales system to process payments, verify transactions, and manage payment records." },
+            { question: "Can a payment management system prevent fraud?", answer: "Yes, many systems include security features like encryption and fraud detection to protect against unauthorized transactions." },
+            { question: "Is a payment management system suitable for online businesses?", answer: "Absolutely, it’s essential for online businesses to provide a smooth and secure payment experience for their customers." }
+        ]
+    },
+    {
+        name: "Asset Management System",
+        plans: [
+            { question: "What is an asset management system?", answer: "An asset management system helps businesses track and manage their physical and digital assets, such as equipment, vehicles, software, and buildings." },
+            { question: "Why is asset management important?", answer: "It’s important because it ensures that all assets are accounted for, properly maintained, and utilized efficiently, which helps in reducing costs and improving productivity." },
+            { question: "How does an asset management system work?", answer: "It tracks assets through unique identifiers like barcodes or RFID tags, records their location, condition, and maintenance history, and provides reports for better decision-making." },
+            { question: "Can an asset management system help with asset depreciation?", answer: "Yes, it can automatically calculate depreciation, helping you keep accurate financial records and make informed budgeting decisions." },
+            { question: "Is an asset management system useful for small businesses?", answer: "Yes, it helps small businesses maximize the value of their assets and ensure they are properly maintained and utilized." }
+        ]
+    },
+    {
+        name: "Human Resources Management System (HRMS)",
+        plans: [
+            { question: "What is a Human Resources Management System (HRMS)?", answer: "An HRMS is software that helps manage employee information and HR tasks, such as payroll, benefits, recruitment, and performance evaluations." },
+            { question: "Why is an HRMS important?", answer: "It’s important because it streamlines HR processes, reduces administrative workload, and helps ensure compliance with labor laws." },
+            { question: "What features should I look for in an HRMS?", answer: "Look for features like employee database management, payroll processing, benefits administration, time and attendance tracking, and performance management." },
+            { question: "Can an HRMS improve employee satisfaction?", answer: "Yes, by providing easy access to information and self-service options for tasks like updating personal details and checking pay stubs, it can improve employee satisfaction." },
+            { question: "Is an HRMS suitable for small businesses?", answer: "Yes, an HRMS can help small businesses manage HR tasks efficiently and provide a better experience for their employees." }
+        ]
+    },
+    {
+        name: "Document Management System (DMS)",
+        plans: [
+            { question: "What is a document management system (DMS)?", answer: "A DMS is software that helps businesses store, organize, and manage digital documents. It provides a central repository for easy access and retrieval of documents." },
+            { question: "Why is a DMS important?", answer: "It’s important because it improves document organization, enhances collaboration, ensures compliance with document retention policies, and increases security." },
+            { question: "How does a DMS work?", answer: "It works by digitizing documents, storing them in a centralized location, and providing tools for categorization, search, and retrieval." },
+            { question: "Can a DMS improve collaboration?", answer: "Yes, it allows multiple users to access, edit, and share documents simultaneously, improving collaboration and productivity." },
+            { question: "Is a DMS suitable for small businesses?", answer: "Yes, it helps small businesses reduce paper clutter, improve document security, and streamline workflows." }
+        ]
+    },
+    {
+        name: "Project Management System",
+        plans: [
+            { question: "What is a project management system?", answer: "A project management system is a tool that helps plan, organize, and manage project tasks and resources. It ensures projects are completed on time and within budget." },
+            { question: "Why is a project management system important?", answer: "It’s important because it provides structure to project workflows, improves communication, and helps track progress and deadlines." },
+            { question: "What features should I look for in a project management system?", answer: "Look for features like task assignment, progress tracking, deadline management, resource allocation, and collaboration tools." },
+            { question: "Can a project management system help with remote work?", answer: "Yes, it facilitates remote work by providing a centralized platform for team communication, task management, and document sharing." },
+            { question: "Is a project management system useful for small businesses?", answer: "Yes, it helps small businesses manage projects efficiently, keep track of tasks, and ensure all team members are on the same page." }
+        ]
+    },
+    {
+        name: "Lead Management System",
+        plans: [
+            { question: "What is a lead management system?", answer: "A lead management system helps businesses track and manage potential customers (leads) from initial contact through conversion to a customer." },
+            { question: "Why is a lead management system important?", answer: "It’s important because it ensures that no potential customer falls through the cracks, helps prioritize leads, and improves the efficiency of the sales process." },
+            { question: "How does a lead management system work?", answer: "It works by capturing lead information, tracking interactions, and providing tools to follow up and nurture leads through the sales funnel." },
+            { question: "Can a lead management system improve sales?", answer: "Yes, by organizing and prioritizing leads, it helps sales teams focus on the most promising opportunities and close more deals." },
+            { question: "Is a lead management system suitable for small businesses?", answer: "Yes, it helps small businesses manage leads more effectively and improve their chances of converting leads into customers." }
+        ]
+    }
+]
+
         }
     },
     created() {

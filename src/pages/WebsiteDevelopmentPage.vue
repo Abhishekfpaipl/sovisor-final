@@ -4,6 +4,45 @@
             <FormBanner :service="'Website Development'" :category="category" :place="place" text="we are offering"
                 v-observe />
         </div>
+        <div class="container">
+            <h1 class="text-center py-4">Website Development Pricing</h1>
+            <div class="table-responsive pb-4">
+                <table class="table table-bordered table-light table-striped" style="width: 100%;">
+                    <thead class="border-bottom">
+                        <tr>
+                            <th class="text-start">Features <p class="mb-0 small">List</p>
+                            </th>
+                            <th scope="col" class="border-end text-center" v-for="plan in plans" :key="plan.id">
+                                <p class="mb-0">{{ plan.title }}</p>
+                                <p class="mb-0 ">
+                                    <small class="smaller ">₹</small>
+                                    <small class="smaller">{{ plan.price }}</small>
+                                    <small class="smaller fw-normal">/-</small>
+                                </p>
+                                <p class="mb-0">
+                                    <small class="fw-light text-decoration-line-through text-dark smaller">{{ plan.mrp
+                                        }}</small>
+                                </p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="border-start border-end">
+                        <tr class="border-bottom" v-for="(feature, index) in plans[0].features" :key="feature.id">
+                            <th class="pb-1 text-start">
+                                <span class="fw-normal smaller">{{ feature.name }}</span>
+                            </th>
+                            <td class="pb-1 text-center" v-for="plan in plans" :key="plan.id">
+                                <i v-if="plan.features[index].included"
+                                    class="bi bi-check2 fs-5 text-success smaller"></i>
+                                <i v-else-if="feature.name === 'Brand Logo' && plan.id === 4"
+                                    class="fw-normal">Basic</i>
+                                <i v-else class="bi bi-dash fs-5 text-secondary"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <LeadManagement :values="links" title="What makes us different ?" v-observe />
         <WebsiteDevelopmentText v-observe />
         <div class="my-5">
@@ -48,6 +87,80 @@ export default {
             services: '',
             category: '',
             place: '',
+            plans: [
+                {
+                    id: 1,
+                    title: "Lite",
+                    description: "Info Website",
+                    price: '999',
+                    mrp: '2,000',
+                    features: [
+                        { id: 1, name: "Custom Website Design", included: true },
+                        { id: 2, name: "Responsive Web Development", included: true },
+                        { id: 3, name: "Content Management System (CMS) Integration", included: true },
+                        { id: 4, name: "E-commerce Development", included: true },
+                        { id: 5, name: "Custom Web Application Development", included: true },
+                        { id: 6, name: "SEO and Performance Optimization", included: true },
+                        { id: 7, name: "Website Maintenance and Support", included: false },
+                        { id: 8, name: "Integration with Third-party Services", included: false },
+
+                    ],
+                },
+                {
+                    id: 2,
+                    title: "Plus",
+                    description: "Business Website",
+                    price: '1,499',
+                    mrp: '3,000',
+                    features: [
+                        { id: 1, name: "Custom Website Design", included: true },
+                        { id: 2, name: "Responsive Web Development", included: true },
+                        { id: 3, name: "Content Management System (CMS) Integration", included: true },
+                        { id: 4, name: "E-commerce Development", included: true },
+                        { id: 5, name: "Custom Web Application Development", included: true },
+                        { id: 6, name: "SEO and Performance Optimization", included: true },
+                        { id: 7, name: "Website Maintenance and Support", included: true },
+                        { id: 8, name: "Integration with Third-party Services", included: true },
+
+                    ],
+                },
+                {
+                    id: 3,
+                    title: "Elite",
+                    description: "Catalog Website",
+                    price: '2,499',
+                    mrp: '5,000',
+                    features: [
+                        { id: 1, name: "Custom Website Design", included: true },
+                        { id: 2, name: "Responsive Web Development", included: true },
+                        { id: 3, name: "Content Management System (CMS) Integration", included: true },
+                        { id: 4, name: "E-commerce Development", included: true },
+                        { id: 5, name: "Custom Web Application Development", included: true },
+                        { id: 6, name: "SEO and Performance Optimization", included: true },
+                        { id: 7, name: "Website Maintenance and Support", included: true },
+                        { id: 8, name: "Integration with Third-party Services", included: true },
+
+                    ],
+                },
+                {
+                    id: 3,
+                    title: "Pro",
+                    description: "Catalog Website",
+                    price: '2,499',
+                    mrp: '5,000',
+                    features: [
+                        { id: 1, name: "Custom Website Design", included: true },
+                        { id: 2, name: "Responsive Web Development", included: true },
+                        { id: 3, name: "Content Management System (CMS) Integration", included: true },
+                        { id: 4, name: "E-commerce Development", included: true },
+                        { id: 5, name: "Custom Web Application Development", included: true },
+                        { id: 6, name: "SEO and Performance Optimization", included: true },
+                        { id: 7, name: "Website Maintenance and Support", included: true },
+                        { id: 8, name: "Integration with Third-party Services", included: true },
+
+                    ],
+                },
+            ],
             links: [
                 {
                     icon: 'bi-shield-check',

@@ -5,13 +5,6 @@
                 v-observe />
         </div>
 
-        <div class="my-5">
-            <LeadManagement :values="features" :title="'Factors, you will love'" v-observe />
-        </div>
-        <div class="my-5">
-            <SalesFunnel :values="values" v-observe />
-        </div>
-
         <div class="container my-5">
             <h1 class="text-center py-4">Digital Marketing Pricing</h1>
             <div class="table-responsive pb-4">
@@ -52,6 +45,13 @@
             </div>
         </div>
         <div class="my-5">
+            <LeadManagement :values="features" :title="'Factors, you will love'" v-observe />
+        </div>
+        <div class="my-5">
+            <SalesFunnel :values="values" v-observe />
+        </div>
+
+        <div class="my-5">
             <AutoScrolling v-observe />
         </div>
         <div class="my-5">
@@ -61,14 +61,14 @@
             <TempCustomers :reviews="customers" title="our customers" v-observe />
         </div>
         <div class="my-5">
-            <Faq :questions="questions" v-observe />
+            <Faq :faqs="faqs" v-observe />
         </div>
         <div class="my-5">
             <Counter service="Digital Marketing" :serviceCount="2000" category="India" :categoryCount="1500"
                 place="All over the world" :placeCount="5000" image="/img/smile.svg" title="our happy customers"
                 v-observe />
         </div>
-        <div class="my-5">
+        <div class="">
             <WhyChooseUs v-observe />
         </div>
     </div>
@@ -147,6 +147,27 @@ export default {
                 {
                     id: 3,
                     title: "Elite",
+                    description: "Catalog Website",
+                    price: '29,999',
+                    mrp: '60,000',
+                    features: [
+                        { id: 1, name: "Search Engine Optimization", included: true },
+                        { id: 2, name: "Pay-Per-Click Advertising", included: true },
+                        { id: 3, name: "Content Marketing", included: true },
+                        { id: 4, name: "Social Media Marketing", included: true },
+                        { id: 5, name: "Email Marketing", included: true },
+                        { id: 6, name: "Influencer Marketing", included: true },
+                        { id: 7, name: "Conversion Rate Optimization", included: true },
+                        { id: 8, name: "Analytics and Reporting", included: true },
+                        { id: 9, name: "Online Reputation Management", included: true },
+                        { id: 10, name: "Mobile Marketing", included: true },
+                        { id: 11, name: "Customer Relationship Management", included: true },
+                        { id: 12, name: "Marketing Automation", included: true },
+                    ],
+                },
+                {
+                    id: 3,
+                    title: "Pro",
                     description: "Catalog Website",
                     price: '29,999',
                     mrp: '60,000',
@@ -456,6 +477,309 @@ export default {
                     description: "Connect to Payment Gateway without leaving the app. Sell your products and services right on your Saleswik landing page.",
                 },
             ],
+            faqs: [
+                {
+                    id: 622,
+                    name: "SEO",
+                    plans: [
+                        {
+                            question: " What is SEO and why is it important?",
+                            answer: " SEO stands for Search Engine Optimization. It's the process of improving your website so it ranks higher in search engine results. This is important because higher rankings mean more people will see and visit your website."
+                        },
+                        {
+                            question: "How long does it take to see results from SEO?",
+                            answer: " SEO is a long-term strategy. It can take several months to see significant improvements, but the results are worth it because they can lead to steady and sustainable traffic growth."
+                        },
+                        {
+                            question: "What are keywords and why do they matter?",
+                            answer: "Keywords are words or phrases people type into search engines when looking for information. They matter because using the right keywords on your website helps search engines understand what your site is about, which can improve your ranking."
+                        },
+                        {
+                            question: "Can I do SEO myself, or do I need to hire an expert?",
+                            answer: "You can definitely start learning and applying basic SEO techniques yourself. However, hiring an expert can be beneficial because they have experience and can help you achieve better results faster."
+                        },
+                        {
+                            question: "Is SEO a one-time effort?",
+                            answer: "No, SEO is an ongoing process. Search engines frequently update their algorithms, and your competitors are always working to improve their rankings, so you need to continually work on your SEO to maintain and improve your ranking."
+                        }
+                    ]
+                },
+                {
+                    name: "Pay-Per-Click",
+                    plans: [
+                        {
+                            question: "What is PPC advertising?",
+                            answer: " PPC stands for Pay-Per-Click. It's a type of online advertising where you pay each time someone clicks on your ad. This is a way to buy visits to your site rather than earning them organically."
+                        },
+                        {
+                            question: "How does PPC advertising work?",
+                            answer: "You create ads and bid on keywords related to your business. When someone searches for those keywords, your ad might appear. If they click on your ad, you pay a small fee to the search engine."
+                        },
+                        {
+                            question: "Is PPC expensive?",
+                            answer: "It can be, but it depends on your budget and the competitiveness of your keywords. The good thing is you can control your costs by setting a daily budget and maximum bid limits."
+                        },
+                        {
+                            question: "How do I know if my PPC campaign is successful?",
+                            answer: "You can measure success by tracking metrics like the number of clicks, the click-through rate (CTR), conversions (actions you want users to take), and the return on investment (ROI)."
+                        },
+                        {
+                            question: "Can PPC help my business if I have a small budget?",
+                            answer: "Yes, PPC can be effective even with a small budget. You can start with a small amount, test different ads, and gradually increase your budget as you see what works best."
+                        },
+                    ]
+                },
+                {
+                    name: "Content Marketing",
+                    plans: [
+                        {
+                            question: "What is content marketing?",
+                            answer: " Content marketing is creating and sharing valuable content to attract and engage your target audience. This can include blog posts, videos, infographics, social media posts, and more."
+                        },
+                        {
+                            question: "Why is content marketing important?",
+                            answer: "It's important because it helps build trust with your audience, improves your website’s SEO, and can generate leads and sales by providing valuable information that attracts and engages potential customers."
+                        },
+                        {
+                            question: "How often should I post new content?",
+                            answer: "It depends on your audience and resources, but consistency is key. Many businesses aim to post at least once a week. The important thing is to maintain a regular schedule that you can sustain."
+                        },
+                        {
+                            question: "What types of content should I create?",
+                            answer: "You should create content that addresses the needs and interests of your audience. This could include how-to guides, industry news, product updates, customer stories, and more."
+                        },
+                        {
+                            question: "How do I measure the success of my content marketing?",
+                            answer: " Success can be measured using metrics like website traffic, engagement (likes, shares, comments), lead generation, and conversion rates. Tools like Google Analytics can help track these metrics."
+                        },
+                    ]
+                },
+                {
+                    name: "Social Media Marketing",
+                    plans: [
+                        {
+                            question: "What is social media marketing?",
+                            answer: "Social media marketing involves using platforms like Facebook, Instagram, Twitter, and LinkedIn to promote your business, engage with your audience, and drive traffic to your website."
+                        },
+                        {
+                            question: "Why is social media marketing important?",
+                            answer: "It's important because it helps you reach a large audience, engage with customers, build brand loyalty, and increase sales through direct communication and targeted advertising."
+                        },
+                        {
+                            question: "How do I choose the right social media platforms for my business?",
+                            answer: "Choose platforms where your target audience spends the most time. For example, if you’re targeting young people, Instagram and TikTok might be best. For professionals, LinkedIn is a good choice."
+                        },
+                        {
+                            question: "How often should I post on social media?",
+                            answer: "The frequency can vary, but a general rule is to post consistently. For example, posting once a day on platforms like Instagram and Facebook, and a few times a day on Twitter."
+                        },
+                        {
+                            question: "Can social media marketing help small businesses?",
+                            answer: "Yes, social media marketing is especially beneficial for small businesses because it’s cost-effective and allows for targeted advertising to reach potential customers in your area."
+                        },
+                    ]
+                },
+                {
+                    name:"Email Marketing",
+                    plans:[
+                        {
+                            question:"What is email marketing?",
+                            answer:"Email marketing involves sending promotional messages or newsletters to a list of subscribers. It's a way to stay in touch with customers, provide updates, and encourage them to make purchases."
+                        },
+                        {
+                            question:"Why is email marketing important?",
+                            answer:"It’s important because it helps you maintain a direct line of communication with your customers, build relationships, and drive sales with targeted messages."
+                        },
+                        {
+                            question:"How do I build an email list?",
+                            answer:"You can build an email list by offering something valuable in exchange for email addresses, like a discount, e-book, or access to exclusive content, and promoting this offer on your website and social media."
+                        },
+                        {
+                            question:"How often should I send emails to my subscribers?",
+                            answer:" It depends on your business and audience, but a common practice is to send newsletters weekly or bi-weekly, and special promotions as needed. Be careful not to send too many emails to avoid annoying your subscribers."
+                        },
+                        {
+                            question:"What should I include in my email campaigns?",
+                            answer:" Include valuable content such as updates, promotions, tips, and personalized messages. Make sure your emails are visually appealing and have a clear call to action."
+                        },
+                    ]
+                },
+                {
+                    name:"Influencer  Marketing",
+                    plans:[
+                        {
+                            question:"What is influencer marketing?",
+                            answer:" Influencer marketing involves partnering with influencers – people with a large and engaged following on social media – to promote your products or services."
+                        },
+                        {
+                            question:"Why is influencer marketing effective?",
+                            answer:"It’s effective because influencers have built trust with their followers. Their recommendations can lead to increased brand awareness and sales."
+                        },
+                        {
+                            question:"How do I find the right influencers for my brand?",
+                            answer:"Look for influencers whose followers match your target audience. Check their engagement rates and see if their values align with your brand."
+                        },
+                        {
+                            question:"Is influencer marketing expensive?",
+                            answer:" It can be, but there are influencers at different levels (micro, macro, and mega) with varying price points. Micro-influencers often charge less and can still deliver great results."
+                        },
+                        {
+                            question:"How do I measure the success of an influencer marketing campaign?",
+                            answer:"Measure success by tracking metrics like engagement (likes, comments, shares), reach, website traffic from influencer posts, and sales generated through unique discount codes or affiliate links."
+                        },
+                    ]
+                },
+                {
+                    name:"Conversion Rate Optimization (CRO)",
+                    plans:[
+                        {
+                            question:"What is conversion rate optimization (CRO)?",
+                            answer:"CRO is the process of improving your website to increase the percentage of visitors who complete a desired action, such as making a purchase or signing up for a newsletter"
+                        },
+                        {
+                            question:"Why is CRO important?",
+                            answer:"It’s important because it helps you get more value from your existing traffic. By optimizing your site, you can increase sales and leads without having to spend more on advertising."
+                        },
+                        {
+                            question:"How can I improve my website's conversion rate?",
+                            answer:" You can improve your conversion rate by making your site user-friendly, having clear calls to action, improving page load times, and testing different elements like headlines and images to see what works best."
+                        },
+                        {
+                            question:"What tools can I use for CRO?",
+                            answer:"Tools like Google Analytics, Hotjar, and Optimizely can help you analyze user behavior, run A/B tests, and track the performance of different site elements."
+                        },
+                        {
+                            question:"How do I know if my CRO efforts are working?",
+                            answer:"Monitor your conversion rate over time and see if it improves. Track specific metrics related to your goals, like the number of purchases or sign-ups, and use A/B testing to compare different strategies."
+                        },
+                    ]
+                },
+                {
+                    name:"Analytics and Reporting",
+                    plans:[
+                        {
+                            question:"What is web analytics?",
+                            answer:"Web analytics involves collecting, analyzing, and reporting data about website traffic and user behavior. This helps you understand how people interact with your site and how to improve it."
+                        },
+                        {
+                            question:"Why are analytics important for my business?",
+                            answer:"Analytics are important because they provide insights into your audience's behavior, showing what works and what doesn’t. This information helps you make data-driven decisions to improve your website and marketing strategies."
+                        },
+                        {
+                            question:"What are some common web analytics tools?",
+                            answer:"Common tools include Google Analytics, Adobe Analytics, and Matomo. These tools help you track metrics like page views, bounce rates, and conversion rates."
+                        },
+                        {
+                            question:"How do I set up web analytics for my site?",
+                            answer:"Most analytics tools require you to add a small piece of code to your website. This code tracks visitor activity and sends the data to your analytics account for you to review."
+                        },
+                        {
+                            question:"What metrics should I focus on?",
+                            answer:"Focus on metrics that align with your business goals, such as conversion rate, average session duration, bounce rate, and traffic sources. These metrics can help you understand user behavior and improve your site’s performance."
+                        },
+                    ]
+                },
+                {
+                    name:"Online Reputation Management (ORM)",
+                    plans:[
+                        {
+                            question:"What is online reputation management (ORM)?",
+                            answer:"ORM involves monitoring and managing your business's online presence. This includes addressing negative reviews, promoting positive content, and ensuring your brand is represented well online.    "
+                        },
+                        {
+                            question:"Why is ORM important?",
+                            answer:"It's important because your online reputation can significantly impact customer trust and business success. Positive reviews can attract customers, while negative ones can drive them away."
+                        },
+                        {
+                            question:"How can I improve my online reputation?",
+                            answer:"Improve your online reputation by encouraging satisfied customers to leave positive reviews, responding professionally to negative feedback, and actively engaging with your audience on social media and review sites."
+                        },
+                        {
+                            question:"What tools can help with ORM?",
+                            answer:"Tools like Google Alerts, Reputation.com, and Hootsuite can help you monitor mentions of your brand, track reviews, and manage your social media presence."
+                        },
+                        {
+                            question:"How do I handle negative reviews?",
+                            answer:"Handle negative reviews by responding promptly and professionally. Acknowledge the issue, apologize if necessary, and offer to resolve the problem offline. This shows potential customers that you care about their experience."
+                        },
+                    ]
+                },
+                {
+                    name:"Mobile  Marketing",
+                    plans:[
+                        {
+                            question:"What is mobile marketing?",
+                            answer:"Mobile marketing involves reaching customers through their mobile devices, such as smartphones and tablets. This can include mobile-friendly websites, apps, SMS marketing, and mobile ads."
+                        },
+                        {
+                            question:"Why is mobile marketing important?",
+                            answer:" It’s important because more people are using mobile devices to browse the internet and make purchases. A strong mobile marketing strategy ensures you reach this audience effectively."
+                        },
+                        {
+                            question:"How can I make my website mobile-friendly?",
+                            answer:"Make your website mobile-friendly by using a responsive design that adjusts to different screen sizes, ensuring fast load times, and making navigation easy on smaller screens."
+                        },
+                        {
+                            question:"What are some effective mobile marketing strategies?",
+                            answer:"Effective strategies include SMS marketing, mobile ads, in-app advertising, and optimizing your website and emails for mobile devices."
+                        },
+                        {
+                            question:"How do I track the success of my mobile marketing efforts?",
+                            answer:" Track success by monitoring metrics like mobile traffic, conversion rates from mobile users, click-through rates on mobile ads, and engagement with mobile content."
+                        },
+                    ]
+                },
+                {
+                    name:"Customer Relationship Management (CRM)",
+                    plans:[
+                        {
+                            question:"What is CRM?",
+                            answer:"CRM stands for Customer Relationship Management. It involves using tools and strategies to manage interactions with current and potential customers, with the goal of improving relationships and driving sales."
+                        },
+                        {
+                            question:"Why is CRM important?",
+                            answer:"CRM is important because it helps businesses understand their customers' needs and preferences, allowing for personalized communication, better customer service, and increased customer loyalty."
+                        },
+                        {
+                            question:"What are some popular CRM tools?",
+                            answer:" Popular CRM tools include Salesforce, HubSpot, Zoho CRM, and Microsoft Dynamics. These tools help you manage customer information, track interactions, and automate sales processes."
+                        },
+                        {
+                            question:"How can CRM improve my business?",
+                            answer:" CRM can improve your business by providing insights into customer behavior, streamlining communication, and helping you identify and target your most valuable customers."
+                        },
+                        {
+                            question:"Is CRM only for large businesses?",
+                            answer:"No, CRM is beneficial for businesses of all sizes. Small businesses can use CRM to manage customer relationships efficiently and grow their customer base."
+                        },
+                    ]
+                },
+                {
+                    name:"Marketing Automation",
+                    plans:[
+                        {
+                            question:"What is marketing automation?",
+                            answer:" Marketing automation involves using software to automate repetitive marketing tasks, such as email campaigns, social media posts, and ad management. This helps streamline processes and improve efficiency."
+                        },
+                        {
+                            question:"Why is marketing automation important?",
+                            answer:"It’s important because it saves time, ensures consistency, and allows you to deliver personalized messages at scale. This can lead to better engagement and higher conversion rates."
+                        },
+                        {
+                            question:"What are some common marketing automation tools?",
+                            answer:"Common tools include HubSpot, Marketo, Mailchimp, and ActiveCampaign. These tools help you automate and manage various marketing tasks."
+                        },
+                        {
+                            question:"How can I use marketing automation effectively?",
+                            answer:"Use it effectively by setting up automated email sequences, segmenting your audience for targeted messages, and using analytics to track and optimize your campaigns."
+                        },
+                        {
+                            question:"Can small businesses benefit from marketing automation?",
+                            answer:"Yes, small businesses can benefit greatly from marketing automation. It allows them to compete with larger companies by automating tasks and focusing on personalized marketing efforts."
+                        },
+                    ]
+                },
+            ]
         }
     },
     created() {

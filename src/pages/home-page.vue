@@ -8,7 +8,7 @@
       <WelcomeModal />
     </div>
     <div class="my-5">
-      <LeadManagement :values="leads" title="What makes us differnet ?" v-observe />
+      <LeadManagement :values="leads" title="What makes us different ?" v-observe />
     </div>
     <div class="my-5">
       <FreeConsultation v-observe />

@@ -31,9 +31,12 @@
                                 <div class="py-2 border-bottom fw-bold">{{
                                     plan.name }}</div>
                                 <div class="card-body text-center">
-                                    <p v-if="plan.price" class="mb-0 card-title fs-3">₹ <span class="fw-bold">{{
-                                        plan.price }} </span></p>
-                                    <p v-else class="mb-0 card-title fs-3 fw-bold">Custom</p>
+                                    <div class="d-flex justify-content-center align-items-center gap-2">
+                                        <p class="text-muted mb-0">Starting from</p>
+                                        <p v-if="plan.price" class="mb-0 card-title fs-3">₹ <span class="fw-bold">{{
+                                            plan.price }} </span></p>
+                                        <p v-else class="mb-0 card-title fs-3 fw-bold">Custom</p>
+                                    </div>
                                     <p v-if="plan.price"><small class="text-capitalize">{{ plan.tag
                                             }}</small></p>
                                     <p v-else>Price, as per requirement</p>
@@ -112,12 +115,12 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Lite",
+                            name: "Starter",
                             price: "500",
                             mrp: "5,000",
                             link: "/digital-marketing/",
                             tag: "/user/yearly/billed yearly",
-                            description: "Start with our Lite plan and upgrade only when you need additional features.",
+                            description: "Start with our Starter plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
@@ -173,7 +176,7 @@ export default {
                         },
                         {
                             id: 2,
-                            name: "Plus",
+                            name: "Enterprise",
                             price: "1000",
                             mrp: "10,000",
                             link: "/digital-marketing/",
@@ -235,7 +238,7 @@ export default {
                         },
                         {
                             id: 3,
-                            name: "Elite",
+                            name: "Business",
                             // price: "5,000",
                             // mrp: "50,000",
                             link: "/digital-marketing/",
@@ -304,12 +307,12 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Lite",
+                            name: "Starter",
                             price: "1,250",
                             mrp: "5,000",
                             link: "/website-development/",
                             tag: "/user/quartly/billed quartly",
-                            description: "Start with our Lite plan and upgrade only when you need additional features.",
+                            description: "Start with our Starter plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
@@ -349,7 +352,7 @@ export default {
                         },
                         {
                             id: 2,
-                            name: "Plus",
+                            name: "Enterprise",
                             price: "2,500",
                             mrp: "10,000",
                             link: "/website-development/",
@@ -395,7 +398,7 @@ export default {
                         },
                         {
                             id: 3,
-                            name: "Elite",
+                            name: "Business",
                             // price: "Custom",
                             // mrp: "50,000",
                             link: "/website-development/",
@@ -448,12 +451,12 @@ export default {
                     plans: [
                         {
                             id: 1,
-                            name: "Lite",
+                            name: "Starter",
                             price: "2,500",
                             mrp: "5,000",
                             link: "/software-development/",
                             tag: "/user/month/billed monthly",
-                            description: "Start with our Lite plan and upgrade only when you need additional features.",
+                            description: "Start with our Starter plan and upgrade only when you need additional features.",
                             button: "Get Started",
                             key: "key features",
                             features: [
@@ -493,7 +496,7 @@ export default {
                         },
                         {
                             id: 2,
-                            name: "Plus",
+                            name: "Enterprise",
                             price: "5,000",
                             mrp: "10,000",
                             link: "/software-development/",
@@ -539,7 +542,7 @@ export default {
                         },
                         {
                             id: 3,
-                            name: "Elite",
+                            name: "Business",
                             // price: "25,000",
                             // mrp: "50,000",
                             link: "/software-development/",

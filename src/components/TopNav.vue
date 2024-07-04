@@ -13,11 +13,12 @@
             </div>
         </div>
         <div class="d-flex gap-3">
-            <div class="rounded-circle p-2 px-3 bg-success" @click="openWhatsapp()">
+            <!-- <div class="rounded-circle p-2 px-3 bg-success" @click="openWhatsapp()">
                 <i class="bi bi-whatsapp text-white fs-4"></i>
-            </div>
-            <div class="rounded-circle p-2 px-3 bg-primary" @click="openDialer()">
+            </div> -->
+            <div class="btn border d-flex justify-content-center align-items-center gap-2" @click="openDialer()">
                 <i class="bi bi-telephone text-white fs-4"></i>
+                <span class="text-white">Contact Sales</span>
             </div>
             <!-- <router-link v-if="showOnDemo && !showOnFree" to="/free-trial"
                 class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
@@ -38,7 +39,7 @@ export default {
         return {
             brandLogo: '/img/logo.svg',
         }
-    }, 
+    },
     methods: {
         closeOffcanvas() {
             const offcanvasElement = document.getElementById('offcanvasExample');
